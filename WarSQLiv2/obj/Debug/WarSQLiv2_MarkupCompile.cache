@@ -1,0 +1,20 @@
+﻿WarSQLiv2
+
+
+winexe
+C#
+.cs
+C:\Users\SkyWiper\Documents\Visual Studio 2015\Projects\WarSQLiv2\WarSQLiv2\obj\Debug\
+WarSQLiv2
+none
+false
+DEBUG;TRACE
+C:\Users\SkyWiper\Documents\Visual Studio 2015\Projects\WarSQLiv2\WarSQLiv2\App.xaml
+211356180373
+
+41394783803
+18-128353183
+UserControls\Attack\MSSQL\FrmAddMsSqlUser.xaml;UserControls\Attack\MSSQL\FrmAddWindowsUser.xaml;UserControls\Attack\MSSQL\FrmAllPrograms.xaml;UserControls\Attack\MSSQL\FrmAntiForensics.xaml;UserControls\Attack\MSSQL\FrmBase64Converter.xaml;UserControls\Attack\MSSQL\FrmDirectoryManager.xaml;UserControls\Attack\MSSQL\FrmDisableWindowsFirewall.xaml;UserControls\Attack\MSSQL\FrmEnumMsSql.xaml;UserControls\Attack\MSSQL\FrmMimikatzDump.xaml;UserControls\Attack\MSSQL\FrmPowerShell.xaml;UserControls\Attack\MSSQL\FrmPrivilegeEscalation.xaml;UserControls\Attack\MSSQL\FrmRdpManager.xaml;UserControls\Attack\MSSQL\FrmReverseConnection.xaml;UserControls\Attack\MSSQL\FrmSendFileToMsSqlServer.xaml;UserControls\Attack\MSSQL\FrmServiceManager.xaml;UserControls\Attack\MSSQL\FrmShowUserList.xaml;UserControls\Attack\MSSQL\FrmSystemInfo.xaml;UserControls\Attack\MSSQL\FrmTaskManager.xaml;UserControls\Help\FrmAbout.xaml;UserControls\WarSQLiAttack.xaml;WarSQLiScanner.xaml;
+
+False
+

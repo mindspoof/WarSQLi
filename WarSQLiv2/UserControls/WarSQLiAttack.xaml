@@ -1,0 +1,93 @@
+﻿<Window x:Class="WarSQLiv2.UserControls.WarSQLiAttack"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WarSQLiv2.UserControls"
+        mc:Ignorable="d"
+        Title="WarSQLiv2 Attack" Height="586" Width="828" Closing="Window_Closing" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Menu x:Name="menu" VerticalAlignment="Top" Background="#FF03A9F4" Foreground="#DDFFFFFF" BorderBrush="#FFAAAAAA">
+            <MenuItem x:Name="menuFile" Header="File">
+                <MenuItem Header="New Session" x:Name="menuFileNewSession" Click="menuFileNewSession_Click"/>
+                <MenuItem x:Name="menuFileRestart" Header="Restart" Click="menuFileRestart_Click"/>
+                <MenuItem x:Name="menuFileExit" Header="Exit" Click="menuFileExit_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="menuLanguage" Header="Language">
+                <MenuItem x:Name="menuLanguageEnglish" Header="English" Click="menuLanguageEnglish_Click"/>
+                <MenuItem x:Name="menuLanguageTurkish" Header="Türkçe" Click="menuLanguageTurkish_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="menuExploit" Header="Exploit">
+                <MenuItem x:Name="menuExploitMssql" Header="MSSQL">
+                    <MenuItem x:Name="menuExploitMsSqlEnumerate" Header="Enumerate" IsEnabled="False">
+                        <MenuItem x:Name="menuExploitMsSqlSystemInfo" Header="System Info" IsEnabled="False" Click="menuExploitMsSqlSystemInfo_Click"></MenuItem>
+                        <MenuItem x:Name="menuExploitMsSqlEnum" Header="Enumerate" IsEnabled="False" Click="menuExploitMsSqlEnum_Click"></MenuItem>
+                        <MenuItem x:Name="menuExploitMSSQLWindowsUserList" Header="Show Windows User List" IsEnabled="False" Click="menuExploitMSSQLWindowsUserList_Click"/>
+                    </MenuItem>
+                    <MenuItem x:Name="menuExploitMsSqlHacking" Header="Hacking" IsEnabled="False">
+                        <MenuItem x:Name="menuExploitMsSqlSQLUserAdd" Header="Add SQL User" IsEnabled="False" Click="menuExploitMsSqlSQLUserAdd_Click"/>
+                        <MenuItem x:Name="menuExploitMsSqlLocalUserAdd" Header="Add Local (Windows) User" IsEnabled="False" Click="menuExploitMsSqlLocalUserAdd_Click"/>
+                        <MenuItem x:Name="menuExploitMsSqlFileUpload" Header="File Upload" IsEnabled="False" Click="menuExploitMsSqlFileUpload_Click"/>
+                    </MenuItem>
+                    <MenuItem x:Name="menuExploitMsSqlPostExploitation" Header="Post Exploitation" IsEnabled="False">
+                        <MenuItem x:Name="menuExploitMsSqlPowershell" Header="PowerShell" IsEnabled="False" Click="MenuExploitMsSqlPowershell_OnClick"/>
+                        <MenuItem x:Name="menuExploitMsSqlTaskManager" Header="Task Manager" IsEnabled="False" Click="menuExploitMsSqlTaskManager_Click"/>
+                        <MenuItem x:Name="menuExploitMsSqlServiceManager" Header="Windows Services Manager" IsEnabled="False" Click="menuExploitMsSqlServiceManager_Click"/>
+                        <MenuItem x:Name="menuExploitMsSqlAllPrograms" Header="Installed Program Manager" IsEnabled="False" Click="menuExploitMsSqlAllPrograms_Click"/>
+                        <MenuItem x:Name="menuExploitMsSqlDirectoryList" Header="Directory Manager" IsEnabled="False" Click="menuExploitMsSqlDirectoryList_Click"/>
+                        <MenuItem x:Name="menuExploitMSSQLDisableWindowsFirewall" Header="Disable Windows Firewall" IsEnabled="False" Click="menuExploitMSSQLDisableWindowsFirewall_Click"/>
+                        <MenuItem x:Name="menuExploitMsSqlReverseConnection" Header="Reverse Connections (Meterpreter, RAT)" IsEnabled="False" Click="menuExploitMsSqlReverseConnection_Click"/>
+                        <MenuItem x:Name="menuExploitMsSqlRDP" Header="Enable Remote Desktop" IsEnabled="False" Click="menuExploitMsSqlRDP_Click"/>
+                    </MenuItem>
+                    <MenuItem x:Name="menuExploitMsSqlPrivEsc" Header="Privilege Escalation" IsEnabled="False">
+                        <MenuItem x:Name="menuExploitMsSqlPrivilegeEscalation" Header="Prvilege Escalation" IsEnabled="False" Click="menuExploitMsSqlPrivilegeEscalation_Click"/>
+                        <MenuItem x:Name="menuExploitMsSqlMimikatz" Header="Mimikatz" IsEnabled="False" Click="menuExploitMsSqlMimikatz_Click"/>
+                    </MenuItem>
+                    <MenuItem x:Name="menuExploitMsSqlForensics" Header="Anti Forensics" IsEnabled="False">
+                        <MenuItem x:Name="menuExploitMsSqlAntiForensics" Header="Anti-Forensics (Cover Tracking)" IsEnabled="False" Click="MenuExploitMsSqlAntiForensics_OnClick"/>
+                    </MenuItem>
+                </MenuItem>
+                
+            </MenuItem>
+            <MenuItem x:Name="menuAbout" Header="About">
+                <MenuItem x:Name="menuAboutAbout" Header="About" Click="menuAboutAbout_Click"/>
+            </MenuItem>
+        </Menu>
+        <Grid HorizontalAlignment="Left" Height="223" Margin="10,48,0,0" VerticalAlignment="Top" Width="430">
+            <ListBox x:Name="lstFoundedAddress" HorizontalAlignment="Left" Height="192" Margin="10,10,0,0" VerticalAlignment="Top" Width="219"  Background="#FFEEE7E7" BorderBrush="Black"/>
+            <RadioButton x:Name="rdPassFast" Content="Zayıf Şifre Testi (Hızlı)" HorizontalAlignment="Left" Margin="234,22,0,0" VerticalAlignment="Top" Checked="rdPassFast_Checked"/>
+            <RadioButton x:Name="rdPassExtended" Content="Zayıf Şifre Testi - Genişletilmiş" HorizontalAlignment="Left" Margin="234,55,0,0" VerticalAlignment="Top" Checked="rdPassExtended_Checked"/>
+            <RadioButton x:Name="rdStaticUser" Content="Sabit Kullanıcı / Şifre Listesi" HorizontalAlignment="Left" Margin="234,89,0,0" VerticalAlignment="Top" Checked="rdStaticUser_Checked"/>
+            <RadioButton x:Name="rdStaticPass" Content="Sabit Şifre / Kullanıcı Listesi" HorizontalAlignment="Left" Margin="234,121,0,0" VerticalAlignment="Top" Checked="rdStaticPass_Checked"/>
+            <RadioButton x:Name="rdUserPassList" Content="Kullanıcı Listesi / Şifre Listesi" HorizontalAlignment="Left" Margin="234,153,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,1.278" Width="179" Checked="rdUserPassList_Checked"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="218" Margin="445,53,0,0" VerticalAlignment="Top" Width="365">
+            <Label x:Name="lblUserList" Content="User List" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblPassList" Content="Pass List" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="btnFileUser" Content="Browse" HorizontalAlignment="Left" Margin="122,10,0,0" VerticalAlignment="Top" Width="84" Click="btnFileUser_Click"/>
+            <Button x:Name="btnFilePass" Content="Browse" HorizontalAlignment="Left" Margin="122,55,0,0" VerticalAlignment="Top" Width="84" Click="btnFilePass_Click"/>
+            <Label x:Name="lblSelectedUserList" Content="" HorizontalAlignment="Left" Margin="211,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.342,0.423"/>
+            <Label x:Name="lblSelectedPassList" Content="" HorizontalAlignment="Left" Margin="211,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.263,0.308"/>
+            <Label x:Name="lblUserName" Content="User Name" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblPassword" Content="Password" HorizontalAlignment="Left" Margin="10,138,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="23" Margin="101,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtPass" HorizontalAlignment="Left" Height="23" Margin="101,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="69,176,0,0" VerticalAlignment="Top" Width="84" Click="btnStop_Click"/>
+            <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="243,176,0,0" VerticalAlignment="Top" Width="84" Click="btnStart_Click"/>
+            <Label x:Name="lblTestedPass" Content="Tested Pass" HorizontalAlignment="Left" Margin="-440,210,0,-18" VerticalAlignment="Top"/>
+        </Grid>
+        <ProgressBar x:Name="progBarPass" HorizontalAlignment="Left" Height="17" Margin="10,293,0,0" VerticalAlignment="Top" Width="800"/>
+        <Grid HorizontalAlignment="Left" Height="198" Margin="10,315,0,0" VerticalAlignment="Top" Width="800">
+            <RichTextBox x:Name="txtStatus" HorizontalAlignment="Left" Height="172" Margin="10,10,0,0" VerticalAlignment="Top" Width="549" Cursor="" AllowDrop="True" VerticalScrollBarVisibility="Visible" IsReadOnly="True">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="WarSQLi v2.0"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <ListBox x:Name="lstResult" HorizontalAlignment="Left" Height="141" Margin="575,41,0,0" VerticalAlignment="Top" Width="215"  Background="#FFEEE7E7" BorderBrush="Black" />
+            <Label x:Name="lblFoundedPass" Content="Bulunan Parolalar" HorizontalAlignment="Left" Margin="575,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.568,0.453" Width="215"/>
+        </Grid>
+        <ProgressBar x:Name="progBar" HorizontalAlignment="Left" Height="25" Margin="10,513,0,0" VerticalAlignment="Top" Width="802"/>
+    </Grid>
+</Window>

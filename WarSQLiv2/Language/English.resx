@@ -1,0 +1,918 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AttackFinish1" xml:space="preserve">
+    <value>Scan process</value>
+  </data>
+  <data name="AttackFinish2" xml:space="preserve">
+    <value>On …</value>
+  </data>
+  <data name="AttackFinish3" xml:space="preserve">
+    <value>It was completed in …</value>
+  </data>
+  <data name="AttackStart1" xml:space="preserve">
+    <value>Scanning for …</value>
+  </data>
+  <data name="AttackStart2" xml:space="preserve">
+    <value>Scanning</value>
+  </data>
+  <data name="AttackStart3" xml:space="preserve">
+    <value>It started at … hours.</value>
+  </data>
+  <data name="ButtonAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="ButtonBase64Tool" xml:space="preserve">
+    <value>Base64 Tool</value>
+  </data>
+  <data name="ButtonCont" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="ButtonConvertBase64" xml:space="preserve">
+    <value>Convert to Base64</value>
+  </data>
+  <data name="ButtonDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ButtonDisable" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ButtonDown" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="ButtonDownload" xml:space="preserve">
+    <value>Download and Run</value>
+  </data>
+  <data name="ButtonEnable" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="ButtonForensics" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ButtonRunCommand" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="ButtonRunPsCommand" xml:space="preserve">
+    <value>Run PowerShell Code</value>
+  </data>
+  <data name="ButtonSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ButtonSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="ButtonSelectFile" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="ButtonShow" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="ButtonShowHash" xml:space="preserve">
+    <value>Show Hash</value>
+  </data>
+  <data name="ButtonStart" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="ButtonStop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="ButtonUpload" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="CheckBoxAllUser" xml:space="preserve">
+    <value>Show All Users</value>
+  </data>
+  <data name="CheckBoxClearLog" xml:space="preserve">
+    <value>Delete All Logs</value>
+  </data>
+  <data name="CheckBoxDesktop" xml:space="preserve">
+    <value>Show Desktop Details</value>
+  </data>
+  <data name="CheckBoxHex" xml:space="preserve">
+    <value>Get as Hex Data</value>
+  </data>
+  <data name="CheckBoxNIC" xml:space="preserve">
+    <value>Show Network Card Details</value>
+  </data>
+  <data name="CheckBoxOsDetails" xml:space="preserve">
+    <value>Show Operating System Details</value>
+  </data>
+  <data name="CheckBoxSelectCommand" xml:space="preserve">
+    <value>Select Command From List</value>
+  </data>
+  <data name="CheckBoxShare" xml:space="preserve">
+    <value>Show All Shares</value>
+  </data>
+  <data name="CheckBoxStopEvent" xml:space="preserve">
+    <value>Stop Windows Log Service</value>
+  </data>
+  <data name="CheckBoxUserGroup" xml:space="preserve">
+    <value>Show All Groups</value>
+  </data>
+  <data name="ComboBoxClearLog" xml:space="preserve">
+    <value> Delete Windows Event Logs</value>
+  </data>
+  <data name="ComboBoxClearMssqlLog" xml:space="preserve">
+    <value>Delete MS-SQL Logs</value>
+  </data>
+  <data name="ComboBoxStopWinEvent" xml:space="preserve">
+    <value>Stop Windows Log Service</value>
+  </data>
+  <data name="DeleteRecord1" xml:space="preserve">
+    <value>Are you sure you want to delete the record of … address?</value>
+  </data>
+  <data name="DeleteRecord2" xml:space="preserve">
+    <value>Record has ... IP address has been removed successfully from the list.</value>
+  </data>
+  <data name="EnumContent1" xml:space="preserve">
+    <value>  List All MS-SQL Users</value>
+  </data>
+  <data name="EnumContent2" xml:space="preserve">
+    <value>List All Databases</value>
+  </data>
+  <data name="EnumContent3" xml:space="preserve">
+    <value>List users whose password does not expire</value>
+  </data>
+  <data name="EnumContent4" xml:space="preserve">
+    <value>List Available Procedure.</value>
+  </data>
+  <data name="EnumContent5" xml:space="preserve">
+    <value>Dump the passwords of MS-SQL Users</value>
+  </data>
+  <data name="EnumContent6" xml:space="preserve">
+    <value>Show Version of Operating System</value>
+  </data>
+  <data name="EnumContent7" xml:space="preserve">
+    <value>Show The Installation Date Of The Operating System</value>
+  </data>
+  <data name="EnumContent8" xml:space="preserve">
+    <value>Show Directory Which Operating System Installed In</value>
+  </data>
+  <data name="Exception1" xml:space="preserve">
+    <value>{0} An error occurred during operation {0} Error {1}</value>
+  </data>
+  <data name="ExploitAddUser1" xml:space="preserve">
+    <value>User …</value>
+  </data>
+  <data name="ExploitAddUser2" xml:space="preserve">
+    <value>Added to system with ... password</value>
+  </data>
+  <data name="ExploitClearLog1" xml:space="preserve">
+    <value>Deleted, please wait…</value>
+  </data>
+  <data name="ExploitClearLog2" xml:space="preserve">
+    <value>Process has been completed.</value>
+  </data>
+  <data name="ExploitError1" xml:space="preserve">
+    <value>Please select the module you want to delete.</value>
+  </data>
+  <data name="ExploitError2" xml:space="preserve">
+    <value>Please select valid a disk.</value>
+  </data>
+  <data name="ExploitError3" xml:space="preserve">
+    <value>Please select a valid directory or file!</value>
+  </data>
+  <data name="ExploitEventLog1" xml:space="preserve">
+    <value>EventLog service has been disabled. Trying to stop service, please wait.</value>
+  </data>
+  <data name="ExploitEventLog2" xml:space="preserve">
+    <value>Windows Event Log Service is being stopped, please wait</value>
+  </data>
+  <data name="ExploitGetDB1" xml:space="preserve">
+    <value>Databases in the MS-SQL server are being listed, please wait.</value>
+  </data>
+  <data name="ExploitGetDB2" xml:space="preserve">
+    <value>Found a database named …</value>
+  </data>
+  <data name="ExploitGetDB3" xml:space="preserve">
+    <value>Databases at … are listed.</value>
+  </data>
+  <data name="ExploitGetTable" xml:space="preserve">
+    <value>Found a table named …</value>
+  </data>
+  <data name="FileSelectPass1" xml:space="preserve">
+    <value>Please select the password file.</value>
+  </data>
+  <data name="FileSelectPass2" xml:space="preserve">
+    <value>Password File</value>
+  </data>
+  <data name="FileSelectUser1" xml:space="preserve">
+    <value>Please select the user name file.</value>
+  </data>
+  <data name="FileSelectUser2" xml:space="preserve">
+    <value>User File</value>
+  </data>
+  <data name="Found1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Found2" xml:space="preserve">
+    <value>Password of … IP address has been found … </value>
+  </data>
+  <data name="Found3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GeneralError1" xml:space="preserve">
+    <value>An error occurred during the operation.</value>
+  </data>
+  <data name="GeneralError2" xml:space="preserve">
+    <value>Occurred Error</value>
+  </data>
+  <data name="GroupBoxAdvanced" xml:space="preserve">
+    <value>File Search and Command Execution</value>
+  </data>
+  <data name="GroupBoxDatabase" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="GroupBoxDetails" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="GroupBoxDirectory" xml:space="preserve">
+    <value>Local Directory Manager</value>
+  </data>
+  <data name="GroupBoxLogDetails" xml:space="preserve">
+    <value>Log Details</value>
+  </data>
+  <data name="GroupBoxLooted" xml:space="preserve">
+    <value>Captured Servers</value>
+  </data>
+  <data name="GroupBoxMySqlType" xml:space="preserve">
+    <value>Select the type of MySQL</value>
+  </data>
+  <data name="GroupBoxReverseConnection" xml:space="preserve">
+    <value>Make Reverse Connection, Download Malware</value>
+  </data>
+  <data name="GroupBoxRow" xml:space="preserve">
+    <value>Line - Data</value>
+  </data>
+  <data name="GroupBoxTable" xml:space="preserve">
+    <value>Table</value>
+  </data>
+  <data name="GroupBoxUserDetail" xml:space="preserve">
+    <value>User Details</value>
+  </data>
+  <data name="GroupBoxUserStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="GroupBoxVolume" xml:space="preserve">
+    <value>Local Disk List</value>
+  </data>
+  <data name="IPAddress" xml:space="preserve">
+    <value>IP Address</value>
+  </data>
+  <data name="LabelBase64Input" xml:space="preserve">
+    <value>Command to be Encrypted</value>
+  </data>
+  <data name="LabelBase64Output" xml:space="preserve">
+    <value>PoweShell Output</value>
+  </data>
+  <data name="LabelDelay" xml:space="preserve">
+    <value>Delay</value>
+  </data>
+  <data name="LabelDetails" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="LabelFilePath" xml:space="preserve">
+    <value>File Path to Read</value>
+  </data>
+  <data name="LabelFoundedPasswords" xml:space="preserve">
+    <value>Found Passwords</value>
+  </data>
+  <data name="LabelMalwareUrl" xml:space="preserve">
+    <value>Exe Address:</value>
+  </data>
+  <data name="LabelPassword" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="LabelPath" xml:space="preserve">
+    <value>File:</value>
+  </data>
+  <data name="LabelRange" xml:space="preserve">
+    <value>Range</value>
+  </data>
+  <data name="LabelSaveLocation" xml:space="preserve">
+    <value>Directory to Save</value>
+  </data>
+  <data name="LabelSingleIp" xml:space="preserve">
+    <value>Single IP</value>
+  </data>
+  <data name="LabelTechnique" xml:space="preserve">
+    <value>Technique</value>
+  </data>
+  <data name="LabelTestedPass" xml:space="preserve">
+    <value>Tested Passwords</value>
+  </data>
+  <data name="LabelTimeOut" xml:space="preserve">
+    <value>Time Out</value>
+  </data>
+  <data name="LabelUploadPath" xml:space="preserve">
+    <value>Directory to Upload</value>
+  </data>
+  <data name="LabelUserName" xml:space="preserve">
+    <value>User Name:</value>
+  </data>
+  <data name="LootedFileError" xml:space="preserve">
+    <value>Please select an account from the "obtained servers" section.</value>
+  </data>
+  <data name="MenuAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="MenuAboutAgreement" xml:space="preserve">
+    <value>Agreement</value>
+  </data>
+  <data name="MenuExploit" xml:space="preserve">
+    <value>Exploit</value>
+  </data>
+  <data name="MenuExploitMssql" xml:space="preserve">
+    <value>MSSQL</value>
+  </data>
+  <data name="MenuExploitMssqlAddMsSqlUser" xml:space="preserve">
+    <value>Add SQL User</value>
+  </data>
+  <data name="MenuExploitMssqlAnalysis" xml:space="preserve">
+    <value>View Databases</value>
+  </data>
+  <data name="MenuExploitMssqlAntiForensics" xml:space="preserve">
+    <value>Delete Evidences/(Tracks)</value>
+  </data>
+  <data name="MenuExploitMssqlDirectoryManager" xml:space="preserve">
+    <value>File Manager</value>
+  </data>
+  <data name="menuExploitMsSqlEnumerate" xml:space="preserve">
+    <value>Information Gathering</value>
+  </data>
+  <data name="menuExploitMsSqlFileUpload" xml:space="preserve">
+    <value>MS-SQL File Upload Panel</value>
+  </data>
+  <data name="MenuExploitMssqlFirewall" xml:space="preserve">
+    <value>Windows Firewall</value>
+  </data>
+  <data name="menuExploitMsSqlForensics" xml:space="preserve">
+    <value>Clean The Evidences</value>
+  </data>
+  <data name="menuExploitMsSqlHacking" xml:space="preserve">
+    <value>Leak</value>
+  </data>
+  <data name="MenuExploitMssqlInfo" xml:space="preserve">
+    <value>System Info</value>
+  </data>
+  <data name="menuExploitMsSqlPostExploitation" xml:space="preserve">
+    <value>After Leak</value>
+  </data>
+  <data name="menuExploitMsSqlPrivEsc" xml:space="preserve">
+    <value>Right and Authority Escalation/ Privilege Escalation</value>
+  </data>
+  <data name="MenuExploitMssqlProgramList" xml:space="preserve">
+    <value>Installed Programs</value>
+  </data>
+  <data name="MenuExploitMssqlRemote" xml:space="preserve">
+    <value>Open Remote Desktop</value>
+  </data>
+  <data name="MenuExploitMssqlReverse" xml:space="preserve">
+    <value>Reverse Connection - Meterpreter - RAT</value>
+  </data>
+  <data name="MenuExploitMssqlService" xml:space="preserve">
+    <value>Manage Windows Services</value>
+  </data>
+  <data name="MenuExploitMssqlShowWinUser" xml:space="preserve">
+    <value>List of Local Users</value>
+  </data>
+  <data name="MenuExploitMssqlTask" xml:space="preserve">
+    <value>Task Manager</value>
+  </data>
+  <data name="MenuExploitMssqlWinUser" xml:space="preserve">
+    <value>Add Local(Windows) User</value>
+  </data>
+  <data name="MenuExploitMysql" xml:space="preserve">
+    <value>MySQL</value>
+  </data>
+  <data name="MenuExploitMysqlAddUser" xml:space="preserve">
+    <value>Add SQL User</value>
+  </data>
+  <data name="MenuExploitMysqlHashDump" xml:space="preserve">
+    <value>MySQL User Passwords</value>
+  </data>
+  <data name="MenuExploitMysqlReadFile" xml:space="preserve">
+    <value>Read File from Server</value>
+  </data>
+  <data name="MenuExploitMysqlUploadRAT" xml:space="preserve">
+    <value>Reverse Connection - Meterpreter - RAT</value>
+  </data>
+  <data name="MenuExploitMysqlWebShell" xml:space="preserve">
+    <value>Upload Web Shell to Server</value>
+  </data>
+  <data name="MenuFile" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="MenuFileClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="MenuFileNew" xml:space="preserve">
+    <value>New Session</value>
+  </data>
+  <data name="MenuFileRestart" xml:space="preserve">
+    <value>Restart</value>
+  </data>
+  <data name="MenuLanguage" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="MenuLanguageEnglish" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="MenuLanguageTurkish" xml:space="preserve">
+    <value>Turkish</value>
+  </data>
+  <data name="MenuView" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="MenuViewCopy" xml:space="preserve">
+    <value>Copy Selected</value>
+  </data>
+  <data name="MenuViewSelectAll" xml:space="preserve">
+    <value>Select All</value>
+  </data>
+  <data name="MessageDownload1" xml:space="preserve">
+    <value>Windows Download service is being activated, please wait…</value>
+  </data>
+  <data name="MessageDownload2" xml:space="preserve">
+    <value>File is being downloaded, please wait…</value>
+  </data>
+  <data name="MessageDownload3" xml:space="preserve">
+    <value>Malware is being run, please wait…</value>
+  </data>
+  <data name="MessageDownload4" xml:space="preserve">
+    <value>File has been downloaded, running.</value>
+  </data>
+  <data name="MessageDownload5" xml:space="preserve">
+    <value>Request to download file via Powershell has been started.</value>
+  </data>
+  <data name="MessageExploit1" xml:space="preserve">
+    <value>{0} {1} has been added to the system with password {2}.</value>
+  </data>
+  <data name="MessageExploitAnalysis1" xml:space="preserve">
+    <value>Databases in the MS-SQL server are being listed, please wait.</value>
+  </data>
+  <data name="MessageExploitAnalysis2" xml:space="preserve">
+    <value>a database named 3 which has 2 id has been found on ms sql server broadcasting on ıp address</value>
+  </data>
+  <data name="MessageExploitAnalysis3" xml:space="preserve">
+    <value>The databases at {0} &lt;&lt;&lt;&lt;&lt; {1} have been listed and ready to download &gt;&gt;&gt;&gt;&gt;</value>
+  </data>
+  <data name="MessageExploitAnalysis4" xml:space="preserve">
+    <value>Found a table named {0} {1} and has object id of {2} ...</value>
+  </data>
+  <data name="MessageExploitAntiForensics1" xml:space="preserve">
+    <value>Deleting, please wait..</value>
+  </data>
+  <data name="MessageExploitAntiForensics2" xml:space="preserve">
+    <value>EventLog service has been disabled. Trying to stop service, please wait.</value>
+  </data>
+  <data name="MessageExploitAntiForensics3" xml:space="preserve">
+    <value>Windows Event Log service is being stopped, please wait...</value>
+  </data>
+  <data name="MessageExploitAntiForensics4" xml:space="preserve">
+    <value>Please select the module you want to delete.</value>
+  </data>
+  <data name="MessageExploitDirectory1" xml:space="preserve">
+    <value>Please select the valid disc!</value>
+  </data>
+  <data name="MessageExploitDirectory2" xml:space="preserve">
+    <value>Please select a valid directory or file!</value>
+  </data>
+  <data name="MessageExploitError1" xml:space="preserve">
+    <value>Please select the IP address to be exploited from the left menu.</value>
+  </data>
+  <data name="MessageExploitFirewall1" xml:space="preserve">
+    <value>Windows firewall has been shut down successfully.</value>
+  </data>
+  <data name="MessageExploitMssqlAddUser1" xml:space="preserve">
+    <value>Could not add … user</value>
+  </data>
+  <data name="MessageExploitMysqlAddUser1" xml:space="preserve">
+    <value> user has been added successfully.</value>
+  </data>
+  <data name="MessageExploitMysqlAddUser2" xml:space="preserve">
+    <value>Root authority assigned to user.</value>
+  </data>
+  <data name="MessageExploitMysqlAddUser3" xml:space="preserve">
+    <value>Query has been completed.</value>
+  </data>
+  <data name="MessageExploitMysqlMeterpreter1" xml:space="preserve">
+    <value>Plugin directory is being found.</value>
+  </data>
+  <data name="MessageExploitMysqlMeterpreter2" xml:space="preserve">
+    <value>Selected file</value>
+  </data>
+  <data name="MessageExploitMysqlMeterpreter3" xml:space="preserve">
+    <value>Is being written with the name WarSQLi.exe to … folder.</value>
+  </data>
+  <data name="MessageExploitMysqlReadFile1" xml:space="preserve">
+    <value>Temporary Table is being checked.</value>
+  </data>
+  <data name="MessageExploitMysqlReadFile2" xml:space="preserve">
+    <value>Temporary table for MySQL is being created.</value>
+  </data>
+  <data name="MessageExploitMysqlReadFile3" xml:space="preserve">
+    <value>Read data is being transferred to the temporary table.</value>
+  </data>
+  <data name="MessageExploitMysqlReadFile4" xml:space="preserve">
+    <value>Data is being read from temporary table.</value>
+  </data>
+  <data name="MessageExploitMysqlReadFile5" xml:space="preserve">
+    <value>Temporary Table is being cleaned.</value>
+  </data>
+  <data name="MessageExploitMysqlReadFile6" xml:space="preserve">
+    <value>Command has been executed successfully.</value>
+  </data>
+  <data name="MessageExploitProgramList1" xml:space="preserve">
+    <value>Are you sure do you want to uninstall the program?</value>
+  </data>
+  <data name="MessageExploitProgramList2" xml:space="preserve">
+    <value>Request for uninstalling of the program has been received. Trying to uninstall the program, please wait.</value>
+  </data>
+  <data name="MessageExploitProgramList3" xml:space="preserve">
+    <value>Program has been uninstalled.</value>
+  </data>
+  <data name="MessageExploitProgramList4" xml:space="preserve">
+    <value>Program could not be uninstalled.</value>
+  </data>
+  <data name="MessageExploitRDP1" xml:space="preserve">
+    <value>RDP service has been closed.</value>
+  </data>
+  <data name="MessageExploitRevCon1" xml:space="preserve">
+    <value>Windows Download service is been activated, please wait…</value>
+  </data>
+  <data name="MessageExploitRevCon2" xml:space="preserve">
+    <value>File is being downloaded, please wait..</value>
+  </data>
+  <data name="MessageExploitRevCon3" xml:space="preserve">
+    <value>Malware is running, please wait…</value>
+  </data>
+  <data name="MessageExploitService1" xml:space="preserve">
+    <value>Services are being listed, please wait...</value>
+  </data>
+  <data name="MessageExploitService2" xml:space="preserve">
+    <value>Services have been listed.</value>
+  </data>
+  <data name="MessageExploitService3" xml:space="preserve">
+    <value>Service has been stopped.</value>
+  </data>
+  <data name="MessageExploitService4" xml:space="preserve">
+    <value>Do you want to stop the service?</value>
+  </data>
+  <data name="MessageExploitService5" xml:space="preserve">
+    <value>Service is being stopped, please wait...</value>
+  </data>
+  <data name="MessageExploitTask1" xml:space="preserve">
+    <value>Processes are being listed, please wait..</value>
+  </data>
+  <data name="MessageExploitTask2" xml:space="preserve">
+    <value>Processes have been listed.</value>
+  </data>
+  <data name="MessageExploitTask3" xml:space="preserve">
+    <value>Do you want to stop the process and its sub-tasks?</value>
+  </data>
+  <data name="MessageExploitTask4" xml:space="preserve">
+    <value>Processes and its sub-tasks have been stopped.</value>
+  </data>
+  <data name="MessageExploitTask5" xml:space="preserve">
+    <value>Processes and its sub-tasks are being stopped, please wait…</value>
+  </data>
+  <data name="MessageIpAdd" xml:space="preserve">
+    <value>IP address added</value>
+  </data>
+  <data name="MessageRDP1" xml:space="preserve">
+    <value>RDP service has been closed.</value>
+  </data>
+  <data name="MessageRDP2" xml:space="preserve">
+    <value>RDP service has been opened.</value>
+  </data>
+  <data name="MessageRemoveProgram1" xml:space="preserve">
+    <value>The request for uninstalling of the program has been received. Trying to uninstall the program, please wait.</value>
+  </data>
+  <data name="MessageRemoveProgram2" xml:space="preserve">
+    <value>Program has been uninstalled.</value>
+  </data>
+  <data name="MessageRemoveProgram3" xml:space="preserve">
+    <value>Program could not be uninstalled.</value>
+  </data>
+  <data name="MessageService1" xml:space="preserve">
+    <value>Services are being listed, please wait...</value>
+  </data>
+  <data name="MessageService2" xml:space="preserve">
+    <value>Services have been listed.</value>
+  </data>
+  <data name="MessageService3" xml:space="preserve">
+    <value>Do you want to stop the service?</value>
+  </data>
+  <data name="MessageService4" xml:space="preserve">
+    <value>Service is being stopped, please wait...</value>
+  </data>
+  <data name="MessageService5" xml:space="preserve">
+    <value>Service has been stopped.</value>
+  </data>
+  <data name="MsSqlVer1" xml:space="preserve">
+    <value>  IP address MSSQL</value>
+  </data>
+  <data name="MsSqlVer2" xml:space="preserve">
+    <value>It uses the … version.</value>
+  </data>
+  <data name="MySqlAttack1" xml:space="preserve">
+    <value>Weak password trial attack for MySQL started</value>
+  </data>
+  <data name="MySqlError1" xml:space="preserve">
+    <value>Could not connected to the MySQL server at … IP address.</value>
+  </data>
+  <data name="MySqlError2" xml:space="preserve">
+    <value>MySQL server at ... IP address does not allow you to connect to your MySQL server with your current IP address ...</value>
+  </data>
+  <data name="RadioBits" xml:space="preserve">
+    <value>BITS</value>
+  </data>
+  <data name="RadioLinux" xml:space="preserve">
+    <value>Linux</value>
+  </data>
+  <data name="RadioPs" xml:space="preserve">
+    <value>PowerShell</value>
+  </data>
+  <data name="RadioW32" xml:space="preserve">
+    <value>Windows 32</value>
+  </data>
+  <data name="RadioW64" xml:space="preserve">
+    <value>Windows 64</value>
+  </data>
+  <data name="RightMenu1" xml:space="preserve">
+    <value>Remove Selected</value>
+  </data>
+  <data name="RightMenu2" xml:space="preserve">
+    <value>Are you sure do you want to delete the record of … IP address?</value>
+  </data>
+  <data name="RightMenu3" xml:space="preserve">
+    <value>The record has ... IP address has been removed succesfully from the list.</value>
+  </data>
+  <data name="RightMenu4" xml:space="preserve">
+    <value>to … IP address and</value>
+  </data>
+  <data name="RightMenu5" xml:space="preserve">
+    <value>Record has ... port has been removed succesfully from the list.</value>
+  </data>
+  <data name="ScannerRightMenu1" xml:space="preserve">
+    <value>Are you sure do want to delete the record of … IP address?</value>
+  </data>
+  <data name="ScannerRightMenu2" xml:space="preserve">
+    <value>War of SQL Impact (WarSQLi) v2.0</value>
+  </data>
+  <data name="ScannerRightMenu3" xml:space="preserve">
+    <value>Record has ... IP address has been removed succesfully from the list.</value>
+  </data>
+  <data name="ScannerTextIP1" xml:space="preserve">
+    <value>Please enter a number less than 255.</value>
+  </data>
+  <data name="ScannerTextIP2" xml:space="preserve">
+    <value>Please enter only numbers in the IP fields.</value>
+  </data>
+  <data name="ScannerTextIP3" xml:space="preserve">
+    <value>Please specify the range.</value>
+  </data>
+  <data name="ScannerTextPort1" xml:space="preserve">
+    <value>Please enter a number less than 65535.</value>
+  </data>
+  <data name="ScannerTextPort2" xml:space="preserve">
+    <value>Please enter only numbers in the port fields.</value>
+  </data>
+  <data name="ScanStarted1" xml:space="preserve">
+    <value>Scanning has started, please wait.</value>
+  </data>
+  <data name="ScanStarted2" xml:space="preserve">
+    <value>Scanning completed</value>
+  </data>
+  <data name="sqlFinderError1" xml:space="preserve">
+    <value>An error occurred.</value>
+  </data>
+  <data name="Sqlinstance1" xml:space="preserve">
+    <value>Instance names are being checked for the SQL server.</value>
+  </data>
+  <data name="Sqlinstance2" xml:space="preserve">
+    <value>Is broadcasting with ... instance address.</value>
+  </data>
+  <data name="SysInfoContent1" xml:space="preserve">
+    <value>Get System Information.</value>
+  </data>
+  <data name="SysInfoContent2" xml:space="preserve">
+    <value>Get Network Card Details.</value>
+  </data>
+  <data name="SysInfoContent3" xml:space="preserve">
+    <value>Get Desktop Details.</value>
+  </data>
+  <data name="SysInfoContent4" xml:space="preserve">
+    <value>Show All Users</value>
+  </data>
+  <data name="SysInfoContent5" xml:space="preserve">
+    <value>Show All Groups</value>
+  </data>
+  <data name="SysInfoContent6" xml:space="preserve">
+    <value>Show All Shares</value>
+  </data>
+  <data name="TitleAllPrograms" xml:space="preserve">
+    <value>Program Install/Uninstall</value>
+  </data>
+  <data name="TitleAntiForensics" xml:space="preserve">
+    <value>Log Cleaning Panel</value>
+  </data>
+  <data name="TitleBase64Encoder" xml:space="preserve">
+    <value>PowerShell Base64 Encryption Panel</value>
+  </data>
+  <data name="TitleDirectoryManager" xml:space="preserve">
+    <value>File - Directory Manager</value>
+  </data>
+  <data name="TitleEnumeration" xml:space="preserve">
+    <value>Information Gathering Panel</value>
+  </data>
+  <data name="TitleMimikatz" xml:space="preserve">
+    <value>Mimikatz Dump</value>
+  </data>
+  <data name="TitleMSSQLUser" xml:space="preserve">
+    <value>MS-SQL User Adding Panel</value>
+  </data>
+  <data name="TitlePowershell" xml:space="preserve">
+    <value>PowerShell Manager</value>
+  </data>
+  <data name="TitlePrivEsc" xml:space="preserve">
+    <value>Privilege Escalation</value>
+  </data>
+  <data name="TitleRDP" xml:space="preserve">
+    <value>Remote Desktop Manager</value>
+  </data>
+  <data name="TitleRevConn" xml:space="preserve">
+    <value>MS-SQL File Downloading Panel</value>
+  </data>
+  <data name="TitleSendFileToMsSqlServer" xml:space="preserve">
+    <value>MS-SQL File Uploading Panel</value>
+  </data>
+  <data name="TitleServiceManager" xml:space="preserve">
+    <value>Service Manager</value>
+  </data>
+  <data name="TitleSystemInfo" xml:space="preserve">
+    <value>System Information Display Panel</value>
+  </data>
+  <data name="TitleWindowsFirewall" xml:space="preserve">
+    <value>Windows Firewall Manager</value>
+  </data>
+  <data name="TitleWindowsUserAdd" xml:space="preserve">
+    <value>Windows Local User Adding Panel</value>
+  </data>
+  <data name="TitleWindowsUserList" xml:space="preserve">
+    <value>Local Users Listing Panel</value>
+  </data>
+  <data name="XPCmdShell1" xml:space="preserve">
+    <value>xp_cmdshell has been activated</value>
+  </data>
+  <data name="XPCmdShell2" xml:space="preserve">
+    <value>xp_cmdshell is active</value>
+  </data>
+  <data name="XPCmdShell3" xml:space="preserve">
+    <value>xp_cmdshell is being activated</value>
+  </data>
+  <data name="XPCmdShell4" xml:space="preserve">
+    <value>You are not authorized to activate xp_cmdshell procedure.</value>
+  </data>
+  <data name="XPCmdShell5" xml:space="preserve">
+    <value>You are not authorized to run the command.</value>
+  </data>
+  <data name="LabelFoundedPassword" xml:space="preserve">
+    <value>Founded Password</value>
+  </data>
+  <data name="RadioExtended" xml:space="preserve">
+    <value>Weak Password Test (Extended)</value>
+  </data>
+  <data name="RadioFast" xml:space="preserve">
+    <value>Weak Password Test (Quick)</value>
+  </data>
+  <data name="RadioStaticPass" xml:space="preserve">
+    <value>Static Password / User List</value>
+  </data>
+  <data name="RadioStaticUser" xml:space="preserve">
+    <value>Static User / Password List</value>
+  </data>
+  <data name="RadioUserAndPass" xml:space="preserve">
+    <value>User List / Password List</value>
+  </data>
+  <data name="TitleAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+</root>

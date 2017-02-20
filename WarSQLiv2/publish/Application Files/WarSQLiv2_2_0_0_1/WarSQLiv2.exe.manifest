@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="WarSQLiv2.exe" version="2.0.0.1" publicKeyToken="ca0b15a8b86d4516" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="WarSQLiv2" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="WarSQLiv2.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MaterialDesignColors.dll" size="228352">
+      <assemblyIdentity name="MaterialDesignColors" version="1.0.0.14576" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>gia3dKTk7GDLhMHk9Z10TCiBlNhq4WH4xBg+c+/mS40=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MaterialDesignThemes.Wpf.dll" size="3258368">
+      <assemblyIdentity name="MaterialDesignThemes.Wpf" version="1.2.0.339" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>uQFiAlwVHG9ZK+l7JgBxWwpMBdcS8eC8uzfw4HiN2UM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mono.Security.dll" size="282624">
+      <assemblyIdentity name="Mono.Security" version="2.0.0.0" publicKeyToken="0738EB9F132ED756" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>v8M2R9bTJoC1NE9Wy23XG3NXQSdGAxBWqbWvoCeZyXc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MySql.Data.dll" size="391680">
+      <assemblyIdentity name="MySql.Data" version="6.6.5.0" publicKeyToken="C5687FC88969C44D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>01iZBzTfg+LSL9fkaqFLuAmSpoW/f/1Jh/GMW15F9kk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WarSQLiv2.exe" size="1057264">
+      <assemblyIdentity name="WarSQLiv2" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>kkOACNu6boDZob1ZefmmFXVRo9vhDxk3i0hF/wL03N4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="icon.ico" size="370070">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>idM7JtmOjASExz3HpZ1VAxbARLRDd7U+zWo8BRc9fmE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="WarSQLiv2.exe.config" size="187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xm4bo26HQ0LNVwz1vdPYtzhkpMnp2AI5i+f0b+OahTI=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-2RQJHCI\SkyWiper" issuerKeyHash="fada685ef93d1201c5af35717b99df19c92053b6" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>JiUGDEmjw/lKBidSGFkmuXZXfPDvtkwDiDce7SJOldE=</DigestValue></Reference></SignedInfo><SignatureValue>IFAFiJrWqr8lrXZjYB9yz72fZdBDnhV3Raa2N9p+ORaC/W5UNcOxqg0hsiexiZqQtJ/lkG9iIbQShW14i9nqlVvuBov++7IiCqcwaBnfEsuUk1WFdGm4Wi2ogpEw8/XBDX0W4K/UlUYBOOCD8pk3Vbe2mdUQo36Qur1/BNQq66s=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>uj1LxWfBH62X/ZjS+7aaZljv4uMG0jGyAGCIzPHXc7Oou3f5+F5Ko7r0TCUezGEsxs776g98+yycWosOhw0VqM+z1tjqOIYlPNZ7fTXKWffYxETSNF0ufknpggrVxsrsy7/7gErTTShn7Kn8DwNp429ZqMaC5rYi07bhrHWdgTc=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="d1954e22ed1e3788034cb6eff07c5776b92659185227064af9c3a3490c062526" Description="" Url=""><as:assemblyIdentity name="WarSQLiv2.exe" version="2.0.0.1" publicKeyToken="ca0b15a8b86d4516" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-2RQJHCI\SkyWiper</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>m8N20dEWL9qu/iKOQegAikPPb3wt3gwYrhGk4cLusqA=</DigestValue></Reference></SignedInfo><SignatureValue>Jz/5nVK40kUo9Ux2+b4tB7sK1jWhFUzWK6Dux6lpi66Xxej/dGcAW9X2vanlTAqYbALq81sJmrP6b7rMG43mNVUDKDEBqqTgo/XRB2YluOEuGVD7L+AJ4ThiKxG0ON55BDrUzk2FdZnZ8L3JqoTctg5Lu9OkeFO0xEsJIgpVtm8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>uj1LxWfBH62X/ZjS+7aaZljv4uMG0jGyAGCIzPHXc7Oou3f5+F5Ko7r0TCUezGEsxs776g98+yycWosOhw0VqM+z1tjqOIYlPNZ7fTXKWffYxETSNF0ufknpggrVxsrsy7/7gErTTShn7Kn8DwNp429ZqMaC5rYi07bhrHWdgTc=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB+TCCAWKgAwIBAgIQfo9Jkw7T0LJF8LhJlBkOAzANBgkqhkiG9w0BAQsFADA7MTkwNwYDVQQDHjAARABFAFMASwBUAE8AUAAtADIAUgBRAEoASABDAEkAXABTAGsAeQBXAGkAcABlAHIwHhcNMTcwMjE2MTYyNTMzWhcNMTgwMjE2MjIyNTMzWjA7MTkwNwYDVQQDHjAARABFAFMASwBUAE8AUAAtADIAUgBRAEoASABDAEkAXABTAGsAeQBXAGkAcABlAHIwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALo9S8VnwR+tl/2Y0vu2mmZY7+LjBtIxsgBgiMzx13OzqLt3+fheSqO69EwlHsxhLMbO++oPfPssnFqLDocNFajPs9bY6jiGJTzWe301yln32MRE0jRdLn5J6YIK1cbK7Mu/+4BK000oZ+yp/A8DaeNvWajGgua2ItO24ax1nYE3AgMBAAEwDQYJKoZIhvcNAQELBQADgYEAWBBhg6DzOf6yuS6CzTcE+ibo9rN2y3cYs95v9WB1PMhpEhRK1i/cMMmUfvb9SKcMOk28ZKXbuk7JNd6FS6Sw0nnm658jIrArLgzGroTpfUyrOjC7pw1ml+z7E3W0GMlzMVNuhnnD1ahR4maXVZLF1H6KahhItgQ70IX0cepQi4A=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

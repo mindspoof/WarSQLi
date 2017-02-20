@@ -1,0 +1,921 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AttackFinish1" xml:space="preserve">
+    <value>Tarama işlemi </value>
+  </data>
+  <data name="AttackFinish2" xml:space="preserve">
+    <value>tarihinde</value>
+  </data>
+  <data name="AttackFinish3" xml:space="preserve">
+    <value>saatinde tamamlandı.</value>
+  </data>
+  <data name="AttackStart1" xml:space="preserve">
+    <value> için tarama yapılıyor...</value>
+  </data>
+  <data name="AttackStart2" xml:space="preserve">
+    <value>Tarama</value>
+  </data>
+  <data name="AttackStart3" xml:space="preserve">
+    <value>saati ile başladı...</value>
+  </data>
+  <data name="ButtonAdd" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="ButtonCont" xml:space="preserve">
+    <value>Devam</value>
+  </data>
+  <data name="ButtonDelete" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="ButtonDisable" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="ButtonDownload" xml:space="preserve">
+    <value>İndir ve Çalıştır</value>
+  </data>
+  <data name="ButtonEnable" xml:space="preserve">
+    <value>Aç</value>
+  </data>
+  <data name="ButtonRunCommand" xml:space="preserve">
+    <value>Çalıştır</value>
+  </data>
+  <data name="ButtonSave" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="ButtonSearch" xml:space="preserve">
+    <value>Ara</value>
+  </data>
+  <data name="ButtonSelectFile" xml:space="preserve">
+    <value>Gözat</value>
+  </data>
+  <data name="ButtonShow" xml:space="preserve">
+    <value>Göster</value>
+  </data>
+  <data name="ButtonShowHash" xml:space="preserve">
+    <value>Hash Göster</value>
+  </data>
+  <data name="ButtonStart" xml:space="preserve">
+    <value>Başla</value>
+  </data>
+  <data name="ButtonStop" xml:space="preserve">
+    <value>Durdur</value>
+  </data>
+  <data name="ButtonUpload" xml:space="preserve">
+    <value>Yükle</value>
+  </data>
+  <data name="CheckBoxAllUser" xml:space="preserve">
+    <value>Tüm Kullanıcıları Göster</value>
+  </data>
+  <data name="CheckBoxClearLog" xml:space="preserve">
+    <value>Tüm Logları Sil</value>
+  </data>
+  <data name="CheckBoxDesktop" xml:space="preserve">
+    <value>Masaüstü Detaylarını Göster</value>
+  </data>
+  <data name="CheckBoxHex" xml:space="preserve">
+    <value>Hex Verisi Olarak Getir</value>
+  </data>
+  <data name="CheckBoxNIC" xml:space="preserve">
+    <value>Ağ Kartı Detaylarını Göster</value>
+  </data>
+  <data name="CheckBoxOsDetails" xml:space="preserve">
+    <value>İşletim Sistemi Detaylarını Göster</value>
+  </data>
+  <data name="CheckBoxSelectCommand" xml:space="preserve">
+    <value>Listeden Komut Seç</value>
+  </data>
+  <data name="CheckBoxShare" xml:space="preserve">
+    <value>Tüm Paylaşımları Göster</value>
+  </data>
+  <data name="CheckBoxStopEvent" xml:space="preserve">
+    <value>Windows Log Servisini Durdur</value>
+  </data>
+  <data name="CheckBoxUserGroup" xml:space="preserve">
+    <value>Tüm Grupları Göster</value>
+  </data>
+  <data name="DeleteRecord1" xml:space="preserve">
+    <value> adresine ait kaydı silmek istediğinize emin misiniz?</value>
+  </data>
+  <data name="DeleteRecord2" xml:space="preserve">
+    <value> IP adresine sahip kayıt listeden başarılı bir şekilde çıkarıldı...</value>
+  </data>
+  <data name="ExploitAddUser1" xml:space="preserve">
+    <value>adlı kullanıcı</value>
+  </data>
+  <data name="ExploitAddUser2" xml:space="preserve">
+    <value>parolası ile sisteme eklendi.</value>
+  </data>
+  <data name="ExploitClearLog1" xml:space="preserve">
+    <value>siliniyor, lütfen bekleyiniz...</value>
+  </data>
+  <data name="ExploitError1" xml:space="preserve">
+    <value>Lütfen silmek istediğiniz modülünü belirtiniz.</value>
+  </data>
+  <data name="ExploitError2" xml:space="preserve">
+    <value>Lütfen geçerli Disk seçiniz</value>
+  </data>
+  <data name="ExploitError3" xml:space="preserve">
+    <value>Lütfen geçerli bir dizin yada dosya seçiniz</value>
+  </data>
+  <data name="ExploitEventLog1" xml:space="preserve">
+    <value>EventLog servisi devre dışı bırakıldı, servis durdurulmaya çalışılıyor. Lütfen bekleyiniz.</value>
+  </data>
+  <data name="ExploitEventLog2" xml:space="preserve">
+    <value>Windows Event Log Servisi durduruluyor, lütfen bekleyiniz...</value>
+  </data>
+  <data name="ExploitGetDB1" xml:space="preserve">
+    <value>MS-SQL sunucusunda bulunan veritabanları listeleniyor, lütfen bekleyiniz.</value>
+  </data>
+  <data name="ExploitGetDB2" xml:space="preserve">
+    <value>adında bir veritabanı bulundu...</value>
+  </data>
+  <data name="ExploitGetDB3" xml:space="preserve">
+    <value>adresinde bulunan veritabanları listelendi.</value>
+  </data>
+  <data name="ExploitGetTable" xml:space="preserve">
+    <value>adında bir tablo bulundu...</value>
+  </data>
+  <data name="FileSelectPass1" xml:space="preserve">
+    <value>Lütfen Parola Dosyasını Seçiniz</value>
+  </data>
+  <data name="FileSelectPass2" xml:space="preserve">
+    <value>Parola Dosyası</value>
+  </data>
+  <data name="FileSelectUser1" xml:space="preserve">
+    <value>Lütfen Kullanıcı Adları Dosyasını Seçiniz</value>
+  </data>
+  <data name="FileSelectUser2" xml:space="preserve">
+    <value>Kullanıcı Dosyası</value>
+  </data>
+  <data name="Found1" xml:space="preserve">
+    <value>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; </value>
+  </data>
+  <data name="Found2" xml:space="preserve">
+    <value> IP adresinin Parolası bulundu. </value>
+  </data>
+  <data name="Found3" xml:space="preserve">
+    <value> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</value>
+  </data>
+  <data name="GeneralError1" xml:space="preserve">
+    <value>İşlem sırasında bir hata meydana geldi.</value>
+  </data>
+  <data name="GeneralError2" xml:space="preserve">
+    <value>Oluşan Hata</value>
+  </data>
+  <data name="GroupBoxAdvanced" xml:space="preserve">
+    <value>Dosya Arama ve Komut Çalıştırma</value>
+  </data>
+  <data name="GroupBoxDatabase" xml:space="preserve">
+    <value>Veritabanı</value>
+  </data>
+  <data name="GroupBoxDetails" xml:space="preserve">
+    <value>Detaylar</value>
+  </data>
+  <data name="GroupBoxDirectory" xml:space="preserve">
+    <value>Yerel Dizin Yöneticisi</value>
+  </data>
+  <data name="GroupBoxLogDetails" xml:space="preserve">
+    <value>Log Detayları</value>
+  </data>
+  <data name="GroupBoxLooted" xml:space="preserve">
+    <value>Elde Geçirilen Sunucular</value>
+  </data>
+  <data name="GroupBoxMySqlType" xml:space="preserve">
+    <value>MySql Türünü Seçiniz</value>
+  </data>
+  <data name="GroupBoxReverseConnection" xml:space="preserve">
+    <value>Ters Bağlantı Yap, Malware Indir</value>
+  </data>
+  <data name="GroupBoxRow" xml:space="preserve">
+    <value>Satır - Veri</value>
+  </data>
+  <data name="GroupBoxTable" xml:space="preserve">
+    <value>Tablo</value>
+  </data>
+  <data name="GroupBoxUserDetail" xml:space="preserve">
+    <value>Kullanıcı Detayları</value>
+  </data>
+  <data name="GroupBoxUserStatus" xml:space="preserve">
+    <value>Durum</value>
+  </data>
+  <data name="GroupBoxVolume" xml:space="preserve">
+    <value>Yerel Disk Listesi</value>
+  </data>
+  <data name="IPAddress" xml:space="preserve">
+    <value>IP Adresi</value>
+  </data>
+  <data name="LabelFilePath" xml:space="preserve">
+    <value>Okunacak Dosya Yolu</value>
+  </data>
+  <data name="LabelMalwareUrl" xml:space="preserve">
+    <value>Exe Adresi:</value>
+  </data>
+  <data name="LabelPassword" xml:space="preserve">
+    <value>Parola:</value>
+  </data>
+  <data name="LabelPath" xml:space="preserve">
+    <value>Dosya:</value>
+  </data>
+  <data name="LabelSaveLocation" xml:space="preserve">
+    <value>Kaydedilecek Dizin</value>
+  </data>
+  <data name="LabelTestedPass" xml:space="preserve">
+    <value>Denenen Parolalar</value>
+  </data>
+  <data name="LabelUploadPath" xml:space="preserve">
+    <value>Yüklenecek Dizin</value>
+  </data>
+  <data name="LabelUserName" xml:space="preserve">
+    <value>Kullanıcı Adı:</value>
+  </data>
+  <data name="LootedFileError" xml:space="preserve">
+    <value>Lütfen \"Elde Gerilen Sunucular\" kısmından bir hesap seçiniz...</value>
+  </data>
+  <data name="MenuAbout" xml:space="preserve">
+    <value>Hakkında</value>
+  </data>
+  <data name="MenuAboutAgreement" xml:space="preserve">
+    <value>Sözleşme</value>
+  </data>
+  <data name="MenuExploit" xml:space="preserve">
+    <value>Exploit</value>
+  </data>
+  <data name="MenuExploitMssql" xml:space="preserve">
+    <value>MSSQL</value>
+  </data>
+  <data name="MenuExploitMssqlAddMsSqlUser" xml:space="preserve">
+    <value>SQL Kullanıcısı Ekle</value>
+  </data>
+  <data name="MenuExploitMssqlAnalysis" xml:space="preserve">
+    <value>Veritabanlarını İncele</value>
+  </data>
+  <data name="MenuExploitMssqlAntiForensics" xml:space="preserve">
+    <value>İzleri Sil (Anti-Forensics)</value>
+  </data>
+  <data name="MenuExploitMssqlDirectoryManager" xml:space="preserve">
+    <value>Dosya Yöneticisi</value>
+  </data>
+  <data name="MenuExploitMssqlFirewall" xml:space="preserve">
+    <value>Windows Güvenlik Duvarı</value>
+  </data>
+  <data name="MenuExploitMssqlInfo" xml:space="preserve">
+    <value>Sistem Bilgisi</value>
+  </data>
+  <data name="MenuExploitMssqlProgramList" xml:space="preserve">
+    <value>Yüklü Programlar</value>
+  </data>
+  <data name="MenuExploitMssqlRemote" xml:space="preserve">
+    <value>Uzak Masaüstü</value>
+  </data>
+  <data name="MenuExploitMssqlReverse" xml:space="preserve">
+    <value>Ters Bağlantı - Meterpreter - RAT</value>
+  </data>
+  <data name="MenuExploitMssqlService" xml:space="preserve">
+    <value>Windows Servislerini Yönet</value>
+  </data>
+  <data name="MenuExploitMssqlTask" xml:space="preserve">
+    <value>Görev Yöneticisi</value>
+  </data>
+  <data name="MenuExploitMssqlWinUser" xml:space="preserve">
+    <value>Yerel (Windows) Kullanıcı Ekle</value>
+  </data>
+  <data name="MenuExploitMysql" xml:space="preserve">
+    <value>MySQL</value>
+  </data>
+  <data name="MenuExploitMysqlAddUser" xml:space="preserve">
+    <value>SQL Kullanıcısı Ekle</value>
+  </data>
+  <data name="MenuExploitMysqlHashDump" xml:space="preserve">
+    <value>MySQL Kullanıcı Şifreleri</value>
+  </data>
+  <data name="MenuExploitMysqlReadFile" xml:space="preserve">
+    <value>Sunucudan Dosya Oku</value>
+  </data>
+  <data name="MenuExploitMysqlUploadRAT" xml:space="preserve">
+    <value>Ters Bağlantı - Meterpreter - RAT</value>
+  </data>
+  <data name="MenuExploitMysqlWebShell" xml:space="preserve">
+    <value>Sunucuya Web Shell Yükle</value>
+  </data>
+  <data name="MenuFile" xml:space="preserve">
+    <value>Dosya</value>
+  </data>
+  <data name="MenuFileClose" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="MenuFileNew" xml:space="preserve">
+    <value>Yeni Oturum</value>
+  </data>
+  <data name="MenuFileRestart" xml:space="preserve">
+    <value>Yeniden Başlat</value>
+  </data>
+  <data name="MenuLanguage" xml:space="preserve">
+    <value>Dil</value>
+  </data>
+  <data name="MenuLanguageEnglish" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="MenuLanguageTurkish" xml:space="preserve">
+    <value>Turkish</value>
+  </data>
+  <data name="MenuView" xml:space="preserve">
+    <value>Düzenle</value>
+  </data>
+  <data name="MenuViewCopy" xml:space="preserve">
+    <value>Seçilenleri Kopyala</value>
+  </data>
+  <data name="MenuViewSelectAll" xml:space="preserve">
+    <value>Tümünü Seç</value>
+  </data>
+  <data name="MessageDownload1" xml:space="preserve">
+    <value>Windows Download hizmeti aktif ediliyor, lütfen bekleyiniz...</value>
+  </data>
+  <data name="MessageDownload2" xml:space="preserve">
+    <value>Dosya indiriliyor, lütfen bekleyiniz...</value>
+  </data>
+  <data name="MessageDownload3" xml:space="preserve">
+    <value>Malware çalıştırılıyor, lütfen bekleyiniz...</value>
+  </data>
+  <data name="MessageExploit1" xml:space="preserve">
+    <value>{0}{1} adlı kullanıcı {2} şifresi ile sisteme eklendi.</value>
+  </data>
+  <data name="MessageExploitAnalysis1" xml:space="preserve">
+    <value>MS-SQL sunucusunda bulunan veritabanları listeleniyor, lütfen bekleyiniz.</value>
+  </data>
+  <data name="MessageExploitAnalysis2" xml:space="preserve">
+    <value>IP adresinde yayın yapan MS-SQL sunucusunda {2} ID sine sahip {3} adında bir veritabanı bulundu...</value>
+  </data>
+  <data name="MessageExploitAnalysis3" xml:space="preserve">
+    <value>{0}&lt;&lt;&lt;&lt;&lt;{1} adresinde bulunan veritabanları listelendi ve indirilmeye hazır &gt;&gt;&gt;&gt;&gt;</value>
+  </data>
+  <data name="MessageExploitAnalysis4" xml:space="preserve">
+    <value>{0}{1} adında ve {2} object id\'sine sahip bir tablo bulundu...</value>
+  </data>
+  <data name="MessageExploitAntiForensics1" xml:space="preserve">
+    <value> siliniyor, lütfen bekleyiniz...</value>
+  </data>
+  <data name="MessageExploitAntiForensics2" xml:space="preserve">
+    <value>EventLog servisi devre dışı bırakıldı, servis durdurulmaya çalışılıyor. Lütfen bekleyiniz.</value>
+  </data>
+  <data name="MessageExploitAntiForensics3" xml:space="preserve">
+    <value>Windows Event Log Servisi durduruluyor, lütfen bekleyiniz...</value>
+  </data>
+  <data name="MessageExploitAntiForensics4" xml:space="preserve">
+    <value>Lütfen silmek istediğiniz modülünü belirtiniz.</value>
+  </data>
+  <data name="MessageExploitDirectory1" xml:space="preserve">
+    <value>Lütfen geçerli Disk seçiniz!</value>
+  </data>
+  <data name="MessageExploitDirectory2" xml:space="preserve">
+    <value>Lütfen geçerli bir dizin yada dosya seçiniz!</value>
+  </data>
+  <data name="MessageExploitError1" xml:space="preserve">
+    <value>Lütfen exploit edilecek IP adresini sol menüden seçiniz.</value>
+  </data>
+  <data name="MessageExploitFirewall1" xml:space="preserve">
+    <value>Windows güvenlik duvarı başarılı bir şekilde kapatıldı.</value>
+  </data>
+  <data name="MessageExploitMysqlAddUser1" xml:space="preserve">
+    <value> kullanıcısı başarılı bir şekilde eklendi</value>
+  </data>
+  <data name="MessageExploitMysqlAddUser2" xml:space="preserve">
+    <value> kullanıcısı için root yetkileri atandı</value>
+  </data>
+  <data name="MessageExploitMysqlAddUser3" xml:space="preserve">
+    <value>Sorgu tamamlandı.</value>
+  </data>
+  <data name="MessageExploitMysqlMeterpreter1" xml:space="preserve">
+    <value>Plugin dizini bulunuyor</value>
+  </data>
+  <data name="MessageExploitMysqlMeterpreter2" xml:space="preserve">
+    <value>Seçilen dosya</value>
+  </data>
+  <data name="MessageExploitMysqlMeterpreter3" xml:space="preserve">
+    <value> klasörüne WarSQLi.exe adı ile yazılıyor.</value>
+  </data>
+  <data name="MessageExploitMysqlReadFile1" xml:space="preserve">
+    <value>Geçici Tablo kontrol ediliyor.</value>
+  </data>
+  <data name="MessageExploitMysqlReadFile2" xml:space="preserve">
+    <value>MySql için Geçici Tablo oluşturuluyor.</value>
+  </data>
+  <data name="MessageExploitMysqlReadFile3" xml:space="preserve">
+    <value>Okunan veri geçici tabloya aktarılıyor.</value>
+  </data>
+  <data name="MessageExploitMysqlReadFile4" xml:space="preserve">
+    <value>Veri geçici tablodan okunuyor.</value>
+  </data>
+  <data name="MessageExploitMysqlReadFile5" xml:space="preserve">
+    <value>Geçici Tablo temizleniyor.</value>
+  </data>
+  <data name="MessageExploitMysqlReadFile6" xml:space="preserve">
+    <value>Komut başarılı bir şekilde çalıştırıldı</value>
+  </data>
+  <data name="MessageExploitProgramList1" xml:space="preserve">
+    <value>Programı kaldırmak istediğinizden emin misiniz?</value>
+  </data>
+  <data name="MessageExploitProgramList2" xml:space="preserve">
+    <value>Program kaldırma isteği alındı, program kaldırılmaya çalışılıyor lütfen bekleyiniz.</value>
+  </data>
+  <data name="MessageExploitProgramList3" xml:space="preserve">
+    <value>Program kaldırıldı</value>
+  </data>
+  <data name="MessageExploitProgramList4" xml:space="preserve">
+    <value>Program kaldırılamadı</value>
+  </data>
+  <data name="MessageExploitRDP1" xml:space="preserve">
+    <value>RDP servisi kapatıldı.</value>
+  </data>
+  <data name="MessageExploitRevCon1" xml:space="preserve">
+    <value>Windows Download hizmeti aktif ediliyor, lütfen bekleyiniz...</value>
+  </data>
+  <data name="MessageExploitRevCon2" xml:space="preserve">
+    <value>Dosya indiriliyor, lütfen bekleyiniz...</value>
+  </data>
+  <data name="MessageExploitRevCon3" xml:space="preserve">
+    <value>Malware çalıştırılıyor, lütfen bekleyiniz...</value>
+  </data>
+  <data name="MessageExploitService1" xml:space="preserve">
+    <value>Servisler listeleniyor, lütfen bekleyiniz...</value>
+  </data>
+  <data name="MessageExploitService2" xml:space="preserve">
+    <value>Servisler listelendi.</value>
+  </data>
+  <data name="MessageExploitService3" xml:space="preserve">
+    <value>Servis durduruldu.</value>
+  </data>
+  <data name="MessageExploitService4" xml:space="preserve">
+    <value>Servisi durdurmak istiyor musunuz?</value>
+  </data>
+  <data name="MessageExploitService5" xml:space="preserve">
+    <value>Servis durduruluyor, lütfen bekleyiniz...</value>
+  </data>
+  <data name="MessageExploitTask1" xml:space="preserve">
+    <value>İşlemler listeleniyor, lütfen bekleyiniz...</value>
+  </data>
+  <data name="MessageExploitTask2" xml:space="preserve">
+    <value>İşlemler listelendi.</value>
+  </data>
+  <data name="MessageExploitTask3" xml:space="preserve">
+    <value>İşlemi ve alt görevlerini durdurmak istiyor musunuz?</value>
+  </data>
+  <data name="MessageExploitTask4" xml:space="preserve">
+    <value>İşlem ve alt görevleri durduruldu.</value>
+  </data>
+  <data name="MessageRDP1" xml:space="preserve">
+    <value>RDP servisi kapatıldı.</value>
+  </data>
+  <data name="MessageRDP2" xml:space="preserve">
+    <value>RDP servisi açıldı.</value>
+  </data>
+  <data name="MessageRemoveProgram1" xml:space="preserve">
+    <value>Program kaldırma isteği alındı, program kaldırılmaya çalışılıyor lütfen bekleyiniz.</value>
+  </data>
+  <data name="MessageRemoveProgram2" xml:space="preserve">
+    <value>Program kaldırıldı</value>
+  </data>
+  <data name="MessageRemoveProgram3" xml:space="preserve">
+    <value>Program kaldırılamadı</value>
+  </data>
+  <data name="MessageService1" xml:space="preserve">
+    <value>Servisler listeleniyor, lütfen bekleyiniz...</value>
+  </data>
+  <data name="MessageService2" xml:space="preserve">
+    <value>Servisler listelendi.</value>
+  </data>
+  <data name="MessageService3" xml:space="preserve">
+    <value>Servisi durdurmak istiyor musunuz</value>
+  </data>
+  <data name="MessageService4" xml:space="preserve">
+    <value>Servis durduruluyor, lütfen bekleyiniz...</value>
+  </data>
+  <data name="MessageService5" xml:space="preserve">
+    <value>Servis durduruldu.</value>
+  </data>
+  <data name="MsSqlVer1" xml:space="preserve">
+    <value> IP adresi MSSQL </value>
+  </data>
+  <data name="MsSqlVer2" xml:space="preserve">
+    <value> versiyonunu kullanmaktadır.</value>
+  </data>
+  <data name="MySqlAttack1" xml:space="preserve">
+    <value>MySQL için zayıf sifre deneme saldırısı başladı...</value>
+  </data>
+  <data name="MySqlError1" xml:space="preserve">
+    <value>IP adresinde bulunan MySQL sunucusuna bağlanılamadı.</value>
+  </data>
+  <data name="MySqlError2" xml:space="preserve">
+    <value> IP adresinde bulunan MySQL sunucusu, mevcut IP adresiniz ile MySQL sunucusuna bağlanmanıza izin vermiyor...</value>
+  </data>
+  <data name="RadioLinux" xml:space="preserve">
+    <value>Linux</value>
+  </data>
+  <data name="RadioW32" xml:space="preserve">
+    <value>Windows 32</value>
+  </data>
+  <data name="RadioW64" xml:space="preserve">
+    <value>Windows 64</value>
+  </data>
+  <data name="RightMenu1" xml:space="preserve">
+    <value>Seçileni Kaldır</value>
+  </data>
+  <data name="RightMenu2" xml:space="preserve">
+    <value> adresine ait kaydı silmek istediğinize emin misiniz?</value>
+  </data>
+  <data name="RightMenu3" xml:space="preserve">
+    <value> IP adresine sahip kayıt listeden başarılı bir şekilde çıkarıldı...</value>
+  </data>
+  <data name="RightMenu4" xml:space="preserve">
+    <value> IP adresine ve </value>
+  </data>
+  <data name="RightMenu5" xml:space="preserve">
+    <value> Portuna sahip kayıt listeden başarılı bir şekilde çıkarıldı...</value>
+  </data>
+  <data name="ScannerRightMenu1" xml:space="preserve">
+    <value> adresine ait kaydı silmek istediğinize emin misiniz?</value>
+  </data>
+  <data name="ScannerRightMenu2" xml:space="preserve">
+    <value>War of SQL Impact (WarSQLi) v2.0</value>
+  </data>
+  <data name="ScannerRightMenu3" xml:space="preserve">
+    <value>IP adresine sahip kayıt listeden başarılı bir şekilde çıkarıldı...</value>
+  </data>
+  <data name="ScannerTextIP1" xml:space="preserve">
+    <value>Lütfen 255\'ten küçük bir sayı belirtiniz.</value>
+  </data>
+  <data name="ScannerTextIP2" xml:space="preserve">
+    <value>Lütfen IP alanlarına sadece sayı giriniz...</value>
+  </data>
+  <data name="ScannerTextIP3" xml:space="preserve">
+    <value>Lütfen aralık belirtiniz.</value>
+  </data>
+  <data name="ScannerTextPort1" xml:space="preserve">
+    <value>Lütfen 65535\'ten küçük bir sayı belirtiniz.</value>
+  </data>
+  <data name="ScannerTextPort2" xml:space="preserve">
+    <value>Lütfen PORT alanlanına sadece sayı giriniz...</value>
+  </data>
+  <data name="ScanStarted1" xml:space="preserve">
+    <value>Tarama işlemi başladı, lütfen bekleyiniz.</value>
+  </data>
+  <data name="sqlFinderError1" xml:space="preserve">
+    <value>Bir hata oluştu</value>
+  </data>
+  <data name="Sqlinstance1" xml:space="preserve">
+    <value>SQL sunucusu için Instance adları denetleniyor...</value>
+  </data>
+  <data name="Sqlinstance2" xml:space="preserve">
+    <value> Instance adresi ile yayın yapmaktadır.</value>
+  </data>
+  <data name="XPCmdShell1" xml:space="preserve">
+    <value>xp_cmdshell aktif edildi</value>
+  </data>
+  <data name="XPCmdShell2" xml:space="preserve">
+    <value>xp_cmdshell aktif</value>
+  </data>
+  <data name="MenuExploitMssqlShowWinUser" xml:space="preserve">
+    <value>Yerel Kullanıcı Listesi</value>
+  </data>
+  <data name="XPCmdShell3" xml:space="preserve">
+    <value>xp_cmdshell aktif ediliyor...</value>
+  </data>
+  <data name="XPCmdShell4" xml:space="preserve">
+    <value>xp_cmdshell Prosedürünü aktif etmek için yetkiniz bulunmamaktadır.</value>
+  </data>
+  <data name="XPCmdShell5" xml:space="preserve">
+    <value>Komut çalıştırma yetkiniz bulunmamaktadır.</value>
+  </data>
+  <data name="ButtonForensics" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="ComboBoxClearLog" xml:space="preserve">
+    <value>  Windows Event Loglarını Sil</value>
+  </data>
+  <data name="ComboBoxClearMssqlLog" xml:space="preserve">
+    <value>MS-SQL Loglarını Sil</value>
+  </data>
+  <data name="ComboBoxStopWinEvent" xml:space="preserve">
+    <value>Windows Log Hizmetini Durdur</value>
+  </data>
+  <data name="EnumContent1" xml:space="preserve">
+    <value>   Tüm MS-SQLKullanıcılarını Listele</value>
+  </data>
+  <data name="EnumContent2" xml:space="preserve">
+    <value>Tüm Veritabanlarını Listele</value>
+  </data>
+  <data name="EnumContent3" xml:space="preserve">
+    <value>Parolası Sona Ermeyen Kullanıcıları Listele</value>
+  </data>
+  <data name="EnumContent4" xml:space="preserve">
+    <value>Kullanılabilir Prosedürleri Listele</value>
+  </data>
+  <data name="EnumContent5" xml:space="preserve">
+    <value>MS-SQL Kullanıcılarının Şifrelerini Dump Et</value>
+  </data>
+  <data name="EnumContent6" xml:space="preserve">
+    <value>İşletim Sisteminin Sürümünü Göster</value>
+  </data>
+  <data name="EnumContent7" xml:space="preserve">
+    <value>İşletim Sisteminin Yüklenme Tarihini Göster</value>
+  </data>
+  <data name="EnumContent8" xml:space="preserve">
+    <value>İşletim Sisteminin Kurulduğu Dizini Göster</value>
+  </data>
+  <data name="Exception1" xml:space="preserve">
+    <value>{0}İşlem sırasında bir hata meydana geldi.{0}Oluşan Hata{1}</value>
+  </data>
+  <data name="ExploitClearLog2" xml:space="preserve">
+    <value>İşlem tamamlandı.</value>
+  </data>
+  <data name="LabelTechnique" xml:space="preserve">
+    <value>Teknik</value>
+  </data>
+  <data name="MessageDownload4" xml:space="preserve">
+    <value>Dosya indirildi, çalıştırılıyor.</value>
+  </data>
+  <data name="MessageDownload5" xml:space="preserve">
+    <value>Powershell üzerinden dosya indirilme isteği başlatıldı.</value>
+  </data>
+  <data name="MessageExploitMssqlAddUser1" xml:space="preserve">
+    <value> adlı kullanıcı eklenemedi</value>
+  </data>
+  <data name="MessageExploitTask5" xml:space="preserve">
+    <value>İşlem ve alt görevleri durduruluyor, lütfen bekleyiniz...</value>
+  </data>
+  <data name="RadioBits" xml:space="preserve">
+    <value>BITS</value>
+  </data>
+  <data name="RadioPs" xml:space="preserve">
+    <value>PowerShell</value>
+  </data>
+  <data name="TitleAllPrograms" xml:space="preserve">
+    <value>Program Ekle / Kaldır</value>
+  </data>
+  <data name="TitleAntiForensics" xml:space="preserve">
+    <value>Log Temizleme Paneli</value>
+  </data>
+  <data name="TitleDirectoryManager" xml:space="preserve">
+    <value>Dosya - Dizin Yöneticisi</value>
+  </data>
+  <data name="TitleMSSQLUser" xml:space="preserve">
+    <value>MS-SQL Kullanıcı Ekleme Paneli</value>
+  </data>
+  <data name="TitleRDP" xml:space="preserve">
+    <value>Uzak Masaüstü Yöneticisi</value>
+  </data>
+  <data name="TitleRevConn" xml:space="preserve">
+    <value>MS-SQL Dosya İndirme Paneli</value>
+  </data>
+  <data name="TitleWindowsFirewall" xml:space="preserve">
+    <value>Windows Güvenlik Duvarı Yöneticisi</value>
+  </data>
+  <data name="TitleWindowsUserAdd" xml:space="preserve">
+    <value>Windows Yerel Kullanıcı Ekleme Paneli</value>
+  </data>
+  <data name="SysInfoContent1" xml:space="preserve">
+    <value>Sistem Bilgilerini Getir</value>
+  </data>
+  <data name="SysInfoContent2" xml:space="preserve">
+    <value>Ağ Kartı Detaylarını Getir</value>
+  </data>
+  <data name="SysInfoContent3" xml:space="preserve">
+    <value>Masaüstü Detaylarını Getir</value>
+  </data>
+  <data name="SysInfoContent4" xml:space="preserve">
+    <value>Tüm Kullanıcıları Göster</value>
+  </data>
+  <data name="SysInfoContent5" xml:space="preserve">
+    <value>Tüm Gurupları Göster</value>
+  </data>
+  <data name="SysInfoContent6" xml:space="preserve">
+    <value>Tüm Paylaşımları Göster</value>
+  </data>
+  <data name="TitleEnumeration" xml:space="preserve">
+    <value>Bilgi Toplama Paneli</value>
+  </data>
+  <data name="TitleServiceManager" xml:space="preserve">
+    <value>Servis Yöneticisi</value>
+  </data>
+  <data name="TitleSystemInfo" xml:space="preserve">
+    <value>Sistem Bilgilerini Görüntüleme Paneli</value>
+  </data>
+  <data name="TitleWindowsUserList" xml:space="preserve">
+    <value>Yerel Kullanıcıları Listeleme Paneli</value>
+  </data>
+  <data name="ButtonBase64Tool" xml:space="preserve">
+    <value>Base64 Aracı</value>
+  </data>
+  <data name="ButtonConvertBase64" xml:space="preserve">
+    <value>Base64'e Çevir</value>
+  </data>
+  <data name="ButtonRunPsCommand" xml:space="preserve">
+    <value>Powershell Kodu Çalıştır</value>
+  </data>
+  <data name="LabelBase64Input" xml:space="preserve">
+    <value>Şifrelenecek Komut</value>
+  </data>
+  <data name="LabelBase64Output" xml:space="preserve">
+    <value>Powershell Çıktısı</value>
+  </data>
+  <data name="TitleBase64Encoder" xml:space="preserve">
+    <value>Powershell Base64 Şifreleme Paneli</value>
+  </data>
+  <data name="TitlePowershell" xml:space="preserve">
+    <value>PowerShell Yöneticisi</value>
+  </data>
+  <data name="LabelFoundedPasswords" xml:space="preserve">
+    <value>Bulunan Parolalar</value>
+  </data>
+  <data name="LabelDelay" xml:space="preserve">
+    <value>Gecikme</value>
+  </data>
+  <data name="LabelDetails" xml:space="preserve">
+    <value>Detaylar</value>
+  </data>
+  <data name="LabelRange" xml:space="preserve">
+    <value>Aralık</value>
+  </data>
+  <data name="LabelSingleIp" xml:space="preserve">
+    <value>Tek IP</value>
+  </data>
+  <data name="LabelTimeOut" xml:space="preserve">
+    <value>Zaman Aşımı</value>
+  </data>
+  <data name="menuExploitMsSqlEnumerate" xml:space="preserve">
+    <value>Bilgi Toplama</value>
+  </data>
+  <data name="menuExploitMsSqlFileUpload" xml:space="preserve">
+    <value>MS-SQL Dosya Yükleme Paneli</value>
+  </data>
+  <data name="menuExploitMsSqlForensics" xml:space="preserve">
+    <value>İzlerin Temizliği</value>
+  </data>
+  <data name="menuExploitMsSqlHacking" xml:space="preserve">
+    <value>Sızma</value>
+  </data>
+  <data name="menuExploitMsSqlPostExploitation" xml:space="preserve">
+    <value>Sızıntı Sonrası</value>
+  </data>
+  <data name="menuExploitMsSqlPrivEsc" xml:space="preserve">
+    <value>Hak ve Yetki Yükseltme</value>
+  </data>
+  <data name="MessageIpAdd" xml:space="preserve">
+    <value>IP adresi eklendi</value>
+  </data>
+  <data name="ScanStarted2" xml:space="preserve">
+    <value>Tarama işlemi tamamlandı</value>
+  </data>
+  <data name="TitleSendFileToMsSqlServer" xml:space="preserve">
+    <value>MS-SQL Dosya Yükleme Paneli</value>
+  </data>
+  <data name="TitleTaskManager" xml:space="preserve">
+    <value>Görev Yöneticisi</value>
+  </data>
+  <data name="ButtonDown" xml:space="preserve">
+    <value>İndir</value>
+  </data>
+  <data name="TitleMimikatz" xml:space="preserve">
+    <value>Mimikatz Dump</value>
+  </data>
+  <data name="TitlePrivEsc" xml:space="preserve">
+    <value>Hak ve Yetki Yükseltme</value>
+  </data>
+  <data name="LabelFoundedPassword" xml:space="preserve">
+    <value>Bulunan Parolalar</value>
+  </data>
+  <data name="RadioExtended" xml:space="preserve">
+    <value>Zayıf Şifre Testi (Genişletilmiş)</value>
+  </data>
+  <data name="RadioFast" xml:space="preserve">
+    <value>Zayıf Şifre Testi (Hızlı)</value>
+  </data>
+  <data name="RadioStaticPass" xml:space="preserve">
+    <value>Sabit Şifre / Kullanıcı Listesi</value>
+  </data>
+  <data name="RadioStaticUser" xml:space="preserve">
+    <value>Sabit Kullanıcı / Şifre Listesi</value>
+  </data>
+  <data name="RadioUserAndPass" xml:space="preserve">
+    <value>Kullanıcı Listesi / Şifre Listesi</value>
+  </data>
+  <data name="TitleAbout" xml:space="preserve">
+    <value>Hakkında</value>
+  </data>
+</root>

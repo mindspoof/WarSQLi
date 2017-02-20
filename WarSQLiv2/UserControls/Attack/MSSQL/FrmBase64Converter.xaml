@@ -1,0 +1,16 @@
+﻿<Window x:Class="WarSQLiv2.UserControls.Attack.MSSQL.FrmBase64Converter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WarSQLiv2.UserControls.Attack.MSSQL"
+        mc:Ignorable="d"
+        Title="Powershell Base64 Encoder Tool" Height="357.341" Width="778.065" WindowStartupLocation="CenterScreen" Focusable="False" Loaded="Window_Loaded">
+    <Grid>
+        <TextBox x:Name="txtBase64" HorizontalAlignment="Left" Height="231" Margin="370,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="385" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Background="#FFF7F7F7" Foreground="Red"/>
+        <Label x:Name="lblInput" Content="Input" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="270"/>
+        <Label x:Name="lblOutput" Content="Output" HorizontalAlignment="Left" Margin="370,10,0,0" VerticalAlignment="Top" Width="318"/>
+        <Button x:Name="btnConvert" Content="Convert To Base64" HorizontalAlignment="Left" Margin="545,276,0,0" VerticalAlignment="Top" Width="217" Click="BtnConvert_OnClick"/>
+        <TextBox x:Name="txtClearText" HorizontalAlignment="Left" Height="231" Margin="10,40,0,0" Text="" VerticalAlignment="Top" Width="346" TextWrapping="Wrap" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Background="#FFF7F7F7"/>
+    </Grid>
+</Window>

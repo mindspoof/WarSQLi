@@ -1,0 +1,19 @@
+﻿<Window x:Class="WarSQLiv2.UserControls.Help.FrmAbout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WarSQLiv2.UserControls.Help"
+        mc:Ignorable="d"
+        Title="FrmAbout" Height="444.324" Width="490.909" Loaded="Window_Loaded" Icon="/WarSQLiv2;component/icon.ico" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="104" Margin="0,0,-0.2,0" VerticalAlignment="Top" Width="485">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/WarSQLiv2;component/logo.png"/>
+            </StackPanel.Background>
+
+        </StackPanel>
+        <Label x:Name="lblVersion" Content="Version - " Margin="0,109,-0.2,224.4" />
+        <TextBox x:Name="txtDescription" Text="" Margin="0,195,-0.2,10.4" TextWrapping="Wrap" IsUndoEnabled="False" HorizontalContentAlignment="Left" IsEnabled="False" Padding="5,0"/>
+    </Grid>
+</Window>
