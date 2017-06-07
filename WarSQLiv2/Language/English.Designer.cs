@@ -250,6 +250,15 @@ namespace WarSQLiv2.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select - Import.
+        /// </summary>
+        internal static string ButtonSelectImport {
+            get {
+                return ResourceManager.GetString("ButtonSelectImport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show.
         /// </summary>
         internal static string ButtonShow {
@@ -943,11 +952,20 @@ namespace WarSQLiv2.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Single IP.
+        ///   Looks up a localized string similar to Target IP.
         /// </summary>
         internal static string LabelSingleIp {
             get {
                 return ResourceManager.GetString("LabelSingleIp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target File:.
+        /// </summary>
+        internal static string LabelTargetFile {
+            get {
+                return ResourceManager.GetString("LabelTargetFile", resourceCulture);
             }
         }
         
@@ -1141,7 +1159,7 @@ namespace WarSQLiv2.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Right and Authority Escalation/ Privilege Escalation.
+        ///   Looks up a localized string similar to Privilege Escalation.
         /// </summary>
         internal static string menuExploitMsSqlPrivEsc {
             get {
@@ -1398,6 +1416,33 @@ namespace WarSQLiv2.Language {
         internal static string MessageDownload5 {
             get {
                 return ResourceManager.GetString("MessageDownload5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The server address could not be resolved, the file could not be downloaded.
+        /// </summary>
+        internal static string MessageDownload6 {
+            get {
+                return ResourceManager.GetString("MessageDownload6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Changing file download technique.
+        /// </summary>
+        internal static string MessageDownload7 {
+            get {
+                return ResourceManager.GetString("MessageDownload7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File Saved .
+        /// </summary>
+        internal static string MessageDownload8 {
+            get {
+                return ResourceManager.GetString("MessageDownload8", resourceCulture);
             }
         }
         
@@ -1852,6 +1897,15 @@ namespace WarSQLiv2.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please run as administrator to use the application..
+        /// </summary>
+        internal static string MessageRunAs {
+            get {
+                return ResourceManager.GetString("MessageRunAs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Services are being listed, please wait....
         /// </summary>
         internal static string MessageService1 {
@@ -2113,7 +2167,7 @@ namespace WarSQLiv2.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please enter only numbers in the IP fields..
+        ///   Looks up a localized string similar to Please fill in the IP field....
         /// </summary>
         internal static string ScannerTextIP2 {
             get {

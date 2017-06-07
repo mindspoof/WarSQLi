@@ -18,7 +18,7 @@
             </RichTextBox>
             <Label x:Name="lblLooted" Content="Looted Server" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="193"/>
             <Label x:Name="lblDetails" Content="Details" HorizontalAlignment="Left" Margin="225,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.598,0.614" Width="250"/>
-            <TextBox x:Name="txtPath" Text="Upload Path eg, C:\Public\Temp" HorizontalAlignment="Left" Height="26" Margin="225,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" FontSize="10"/>
+            <TextBox x:Name="txtPath" Text="C:\ProgramData" HorizontalAlignment="Left" Height="26" Margin="225,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" FontSize="10"/>
             <TextBox x:Name="txtSelectFile" Text="" HorizontalAlignment="Left" Height="26" Margin="225,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" FontSize="10" IsEnabled="False"/>
             <Button x:Name="btnSelectFile" Content="Select File" HorizontalAlignment="Left" Margin="225,127,0,0" VerticalAlignment="Top" Width="120" FontSize="12" Height="32" Click="btnSelectFile_Click"/>
             <Button x:Name="btnUpload" Content="Upload File" HorizontalAlignment="Left" Margin="396,127,0,0" VerticalAlignment="Top" Width="120" FontSize="12" Height="32" Click="btnUpload_Click"/>

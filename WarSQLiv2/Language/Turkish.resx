@@ -652,7 +652,7 @@
     <value> adresine ait kaydı silmek istediğinize emin misiniz?</value>
   </data>
   <data name="ScannerRightMenu2" xml:space="preserve">
-    <value>War of SQL Impact (WarSQLi) v2.0</value>
+    <value>War of SQL Impact (WarSQLi) v2.1</value>
   </data>
   <data name="ScannerRightMenu3" xml:space="preserve">
     <value>IP adresine sahip kayıt listeden başarılı bir şekilde çıkarıldı...</value>
@@ -661,7 +661,7 @@
     <value>Lütfen 255\'ten küçük bir sayı belirtiniz.</value>
   </data>
   <data name="ScannerTextIP2" xml:space="preserve">
-    <value>Lütfen IP alanlarına sadece sayı giriniz...</value>
+    <value>Lütfen IP alanını doldurunuz...</value>
   </data>
   <data name="ScannerTextIP3" xml:space="preserve">
     <value>Lütfen aralık belirtiniz.</value>
@@ -853,7 +853,7 @@
     <value>Aralık</value>
   </data>
   <data name="LabelSingleIp" xml:space="preserve">
-    <value>Tek IP</value>
+    <value>Hedef IP</value>
   </data>
   <data name="LabelTimeOut" xml:space="preserve">
     <value>Zaman Aşımı</value>
@@ -901,21 +901,45 @@
     <value>Bulunan Parolalar</value>
   </data>
   <data name="RadioExtended" xml:space="preserve">
-    <value>Zayıf Şifre Testi (Genişletilmiş)</value>
+    <value>Zayıf Parola Testi (Genişletilmiş)</value>
   </data>
   <data name="RadioFast" xml:space="preserve">
-    <value>Zayıf Şifre Testi (Hızlı)</value>
+    <value>Zayıf Parola Testi (Hızlı)</value>
   </data>
   <data name="RadioStaticPass" xml:space="preserve">
-    <value>Sabit Şifre / Kullanıcı Listesi</value>
+    <value>Sabit Parola / Kullanıcı Listesi</value>
   </data>
   <data name="RadioStaticUser" xml:space="preserve">
-    <value>Sabit Kullanıcı / Şifre Listesi</value>
+    <value>Sabit Kullanıcı / Parola Listesi</value>
   </data>
   <data name="RadioUserAndPass" xml:space="preserve">
-    <value>Kullanıcı Listesi / Şifre Listesi</value>
+    <value>Kullanıcı Listesi / Parola Listesi</value>
   </data>
   <data name="TitleAbout" xml:space="preserve">
     <value>Hakkında</value>
+  </data>
+  <data name="FileSelectTarget1" xml:space="preserve">
+    <value>Lütfen Hedef dosyasını seçiniz.</value>
+  </data>
+  <data name="FileSelectTarget2" xml:space="preserve">
+    <value>Hedef Dosyası</value>
+  </data>
+  <data name="ButtonSelectImport" xml:space="preserve">
+    <value>Seç - Aktar</value>
+  </data>
+  <data name="LabelTargetFile" xml:space="preserve">
+    <value>Hedef Dosya:</value>
+  </data>
+  <data name="MessageRunAs" xml:space="preserve">
+    <value>Lütfen uygulamayı kullanabilmek için yönetici olarak çalıştırınız.</value>
+  </data>
+  <data name="MessageDownload6" xml:space="preserve">
+    <value>Sunucu adresi çözümlenemedi, dosya indirilemedi.</value>
+  </data>
+  <data name="MessageDownload7" xml:space="preserve">
+    <value>Dosya indirme tekniği değiştiriliyor</value>
+  </data>
+  <data name="MessageDownload8" xml:space="preserve">
+    <value>Dosya indirildi </value>
   </data>
 </root>

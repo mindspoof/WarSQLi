@@ -55,11 +55,11 @@
         </Menu>
         <Grid HorizontalAlignment="Left" Height="223" Margin="10,48,0,0" VerticalAlignment="Top" Width="430">
             <ListBox x:Name="lstFoundedAddress" HorizontalAlignment="Left" Height="192" Margin="10,10,0,0" VerticalAlignment="Top" Width="219"  Background="#FFEEE7E7" BorderBrush="Black"/>
-            <RadioButton x:Name="rdPassFast" Content="Zayıf Şifre Testi (Hızlı)" HorizontalAlignment="Left" Margin="234,22,0,0" VerticalAlignment="Top" Checked="rdPassFast_Checked"/>
-            <RadioButton x:Name="rdPassExtended" Content="Zayıf Şifre Testi - Genişletilmiş" HorizontalAlignment="Left" Margin="234,55,0,0" VerticalAlignment="Top" Checked="rdPassExtended_Checked"/>
-            <RadioButton x:Name="rdStaticUser" Content="Sabit Kullanıcı / Şifre Listesi" HorizontalAlignment="Left" Margin="234,89,0,0" VerticalAlignment="Top" Checked="rdStaticUser_Checked"/>
-            <RadioButton x:Name="rdStaticPass" Content="Sabit Şifre / Kullanıcı Listesi" HorizontalAlignment="Left" Margin="234,121,0,0" VerticalAlignment="Top" Checked="rdStaticPass_Checked"/>
-            <RadioButton x:Name="rdUserPassList" Content="Kullanıcı Listesi / Şifre Listesi" HorizontalAlignment="Left" Margin="234,153,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,1.278" Width="179" Checked="rdUserPassList_Checked"/>
+            <RadioButton x:Name="rdPassFast" Content="Zayıf Parola Testi (Hızlı)" HorizontalAlignment="Left" Margin="234,22,0,0" VerticalAlignment="Top" Checked="rdPassFast_Checked"/>
+            <RadioButton x:Name="rdPassExtended" Content="Zayıf Parola Testi - Genişletilmiş" HorizontalAlignment="Left" Margin="234,55,0,0" VerticalAlignment="Top" Checked="rdPassExtended_Checked"/>
+            <RadioButton x:Name="rdStaticUser" Content="Sabit Kullanıcı / Parola Listesi" HorizontalAlignment="Left" Margin="234,89,0,0" VerticalAlignment="Top" Checked="rdStaticUser_Checked"/>
+            <RadioButton x:Name="rdStaticPass" Content="Sabit Parola / Kullanıcı Listesi" HorizontalAlignment="Left" Margin="234,121,0,0" VerticalAlignment="Top" Checked="rdStaticPass_Checked"/>
+            <RadioButton x:Name="rdUserPassList" Content="Kullanıcı Listesi / Parola Listesi" HorizontalAlignment="Left" Margin="234,153,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,1.278" Width="179" Checked="rdUserPassList_Checked"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="218" Margin="445,53,0,0" VerticalAlignment="Top" Width="365">
             <Label x:Name="lblUserList" Content="User List" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>

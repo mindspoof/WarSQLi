@@ -20,7 +20,7 @@
         <Label x:Name="lblMalware" Content="Potato URL:" HorizontalAlignment="Left" Margin="208,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblSaveLocation" Content="Save Location:" HorizontalAlignment="Left" Margin="208,41,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtUrl" HorizontalAlignment="Left" Height="23" Margin="329,11,0,0" TextWrapping="Wrap" Text="https://raw.githubusercontent.com/foxglovesec/RottenPotato/master/rottenpotato.exe" VerticalAlignment="Top" Width="263"/>
-        <TextBox x:Name="txtSaveLocation" HorizontalAlignment="Left" Height="23" Margin="329,41,0,0" TextWrapping="Wrap" Text="C:\Users\MSSQLSERVER\Potato.exe" VerticalAlignment="Top" Width="263"/>
+        <TextBox x:Name="txtSaveLocation" HorizontalAlignment="Left" Height="23" Margin="329,41,0,0" TextWrapping="Wrap" Text="C:\Programdata\Potato.exe" VerticalAlignment="Top" Width="263"/>
         <RadioButton x:Name="rdPs" Content="PowerShell" HorizontalAlignment="Left" Margin="329,74,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblTech" Content="Technique:" HorizontalAlignment="Left" Margin="208,66,0,0" VerticalAlignment="Top"/>
     </Grid>

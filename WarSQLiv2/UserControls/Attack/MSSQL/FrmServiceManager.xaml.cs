@@ -157,7 +157,7 @@ namespace WarSQLiv2.UserControls.Attack.MSSQL
         {
             if (lstServiceList.SelectedIndex > -1)
             {
-                MessageBoxResult result = MessageBox.Show(_languageControl.SelectedLanguage.GetString("MessageService3"), @"WarSQLiv2", MessageBoxButton.YesNo);
+                var result = MessageBox.Show(_languageControl.SelectedLanguage.GetString("MessageService3"), @"WarSQLiv2", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
                     txtStatus.AppendText($"{Environment.NewLine}{_languageControl.SelectedLanguage.GetString("MessageExploitTask5")}");

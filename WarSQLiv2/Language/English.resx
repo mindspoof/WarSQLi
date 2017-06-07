@@ -409,7 +409,7 @@
     <value>Directory to Save</value>
   </data>
   <data name="LabelSingleIp" xml:space="preserve">
-    <value>Single IP</value>
+    <value>Target IP</value>
   </data>
   <data name="LabelTechnique" xml:space="preserve">
     <value>Technique</value>
@@ -475,7 +475,7 @@
     <value>After Leak</value>
   </data>
   <data name="menuExploitMsSqlPrivEsc" xml:space="preserve">
-    <value>Right and Authority Escalation/ Privilege Escalation</value>
+    <value>Privilege Escalation</value>
   </data>
   <data name="MenuExploitMssqlProgramList" xml:space="preserve">
     <value>Installed Programs</value>
@@ -784,7 +784,7 @@
     <value>Please enter a number less than 255.</value>
   </data>
   <data name="ScannerTextIP2" xml:space="preserve">
-    <value>Please enter only numbers in the IP fields.</value>
+    <value>Please fill in the IP field...</value>
   </data>
   <data name="ScannerTextIP3" xml:space="preserve">
     <value>Please specify the range.</value>
@@ -914,5 +914,23 @@
   </data>
   <data name="TitleAbout" xml:space="preserve">
     <value>About</value>
+  </data>
+  <data name="ButtonSelectImport" xml:space="preserve">
+    <value>Select - Import</value>
+  </data>
+  <data name="LabelTargetFile" xml:space="preserve">
+    <value>Target File:</value>
+  </data>
+  <data name="MessageRunAs" xml:space="preserve">
+    <value>Please run as administrator to use the application.</value>
+  </data>
+  <data name="MessageDownload6" xml:space="preserve">
+    <value>The server address could not be resolved, the file could not be downloaded</value>
+  </data>
+  <data name="MessageDownload7" xml:space="preserve">
+    <value>Changing file download technique</value>
+  </data>
+  <data name="MessageDownload8" xml:space="preserve">
+    <value>File Saved </value>
   </data>
 </root>

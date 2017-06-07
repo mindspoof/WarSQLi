@@ -1,0 +1,49 @@
+﻿<Window x:Class="WarSQLiv2.Startup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WarSQLiv2"
+        mc:Ignorable="d"
+        Title="WarSQLiv2.1" Height="538.72" Width="727.317" Background="#FFCCCCCC" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Startup_OnLoaded">
+    <Grid>
+        <Label x:Name="lblSingleIp" Content="Target IP:" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txtSingleIPOctet1" HorizontalAlignment="Left" Height="23" Margin="73,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" TextAlignment="Center" FontWeight="Bold" MaxLength="3" PreviewTextInput="txtSingleIPOctet1_PreviewTextInput" TextChanged="txtSingleIPOctet1_TextChanged" TabIndex="0"/>
+        <TextBox x:Name="txtSingleIPOctet2" HorizontalAlignment="Left" Height="23" Margin="102,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" TextAlignment="Center" FontWeight="Bold" MaxLength="3" PreviewTextInput="txtSingleIPOctet2_PreviewTextInput" TextChanged="txtSingleIPOctet2_TextChanged" TabIndex="1"/>
+        <TextBox x:Name="txtSingleIPOctet3" HorizontalAlignment="Left" Height="23" Margin="133,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.594,0.464" TextAlignment="Center" FontWeight="Bold" MaxLength="3" PreviewTextInput="txtSingleIPOctet3_PreviewTextInput" TextChanged="txtSingleIPOctet3_TextChanged" TabIndex="2"/>
+        <TextBox x:Name="txtSingleIPOctet4" HorizontalAlignment="Left" Height="23" Margin="162,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.594,0.464" TextAlignment="Center" FontWeight="Bold" MaxLength="3" PreviewTextInput="txtSingleIPOctet4_PreviewTextInput" TextChanged="txtSingleIPOctet4_TextChanged" TabIndex="3"/>
+        <Label x:Name="lblSinglePort" Content="Port:" HorizontalAlignment="Left" Margin="195,56,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txtSinglePort" HorizontalAlignment="Left" Height="23" Margin="237,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="35" TextAlignment="Center" FontWeight="Bold" MaxLength="5" PreviewTextInput="txtSinglePort_PreviewTextInput" Text="1433" TabIndex="4"/>
+        <Button x:Name="btnAddSingleIp" Content="Add" HorizontalAlignment="Left" Margin="291,54,0,0" VerticalAlignment="Top" Width="65" Click="btnAddSingleIp_Click" TabIndex="5"/>
+        <Button x:Name="btnContinue" Content="Continue" HorizontalAlignment="Left" Margin="582,265,0,0" VerticalAlignment="Top" Width="129" IsEnabled="False" Click="btnContinue_Click" TabIndex="6"/>
+        <ListBox x:Name="lstFoundedAddress" HorizontalAlignment="Left" Height="193" Margin="370,57,0,0" VerticalAlignment="Top" Width="325" Background="#FFEEE7E7" BorderBrush="Black" MouseDoubleClick="lstFoundedAddress_MouseDoubleClick"/>
+        <RichTextBox x:Name="txtStatus" Margin="7,303,4.8,0" VerticalAlignment="Top" IsReadOnly="True" TextChanged="txtStatus_TextChanged" VerticalScrollBarVisibility="Auto" Height="188">
+            <FlowDocument>
+                <Paragraph>
+                    <Figure Width="200">
+                        <BlockUIContainer/>
+                    </Figure>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Label x:Name="lblStatus" Content="Status" HorizontalAlignment="Left" Margin="10,271,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Menu x:Name="menu" VerticalAlignment="Top" Background="#FF03A9F4" Foreground="#DDFFFFFF" BorderBrush="#FFAAAAAA">
+            <MenuItem x:Name="menuFile" Header="File">
+                <MenuItem Header="New Session" x:Name="menuFileNewSession" Click="MenuFileNewSession_OnClick"/>
+                <MenuItem x:Name="menuFileRestart" Header="Restart" Click="MenuFileRestart_OnClick"/>
+                <MenuItem x:Name="menuFileExit" Header="Exit"  Click="MenuFileExit_OnClick"/>
+            </MenuItem>
+            <MenuItem x:Name="menuLanguage" Header="Language">
+                <MenuItem x:Name="menuLanguageEnglish" Header="English" Click="menuLanguageEnglish_Click"/>
+                <MenuItem x:Name="menuLanguageTurkish" Header="Türkçe" Click="menuLanguageTurkish_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="menuAbout" Header="About">
+                <MenuItem x:Name="menuAboutAbout" Header="About" Click="menuAboutAbout_Click"/>
+            </MenuItem>
+        </Menu>
+        <Label x:Name="lblTargetFile" Content="Target File:" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txtImportTarget" HorizontalAlignment="Left" Height="26" Margin="87,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="269" RenderTransformOrigin="0.501,0.669"/>
+        <Button x:Name="btnSelect" Content="Select - Import" HorizontalAlignment="Left" Margin="195,152,0,0" VerticalAlignment="Top" Width="161" TabIndex="10" Click="BtnSelect_OnClick"/>
+
+    </Grid>
+</Window>
